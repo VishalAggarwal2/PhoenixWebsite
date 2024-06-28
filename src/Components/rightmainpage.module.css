@@ -1,0 +1,14 @@
+.outerdiv {
+  width: 100%;
+  height: 90%;
+}
+.rightdiv_image {
+  width: 100%;
+
+}
+
+@media (max-width: 1080px) {
+  .rightdiv_image {
+    display: none;
+  }
+}

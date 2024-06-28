@@ -1,0 +1,63 @@
+.icons 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.iconStyle
+{
+    color: grey;
+}
+
+.teamname {
+    padding-top: 6.875rem;
+    padding-bottom: 0.85rem;
+    display: flex;
+    justify-content: center;
+height: 29px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 1.8125rem;
+text-transform: capitalize;
+
+color: #323232;
+
+opacity: 0.7;
+}
+
+.detailsdiv
+{
+    width: 290px;
+height: 191px;
+background: rgba(50, 50, 50, 0.07);
+border-radius: 10px;
+margin: 20px;
+
+
+/* Glass effect */
+background: rgba( 241, 241, 241, 0.35 );
+/* box-shadow: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 ); */
+backdrop-filter: blur( 3.5px );
+-webkit-backdrop-filter: blur( 3.5px );
+border-radius: 10px;
+border: 2px solid rgba( 255, 255, 255, 0.18 );
+
+background: rgba( 204, 204, 204, 0.3 );
+/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@media screen and (max-width: 900px)
+{
+    .teamname{
+        font-size: 1.4rem;
+    }
+}

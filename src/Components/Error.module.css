@@ -1,0 +1,9 @@
+.container{
+background-image: url("/public/images/404NotFound.png");
+width: 100%;
+height:100vh;
+margin: 0;
+z-index : 0;
+background-repeat: no-repeat;
+background-size: cover;
+}

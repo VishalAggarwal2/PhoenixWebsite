@@ -1,0 +1,83 @@
+.EventCarousel img {
+  width: 100%;
+  margin: 10px 0px;
+}
+.EventCarousel {
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  height: 25rem;
+  margin: 10px;
+  /* border: 2px solid red; */
+  margin-top: 5rem;
+}
+.Event_data {
+  width: 100%;
+  display: flex;
+  margin: 0rem 2rem;
+  overflow-x: scroll;
+}
+.Event_data::-webkit-scrollbar {
+  display: none;
+}
+.EventCard {
+  margin: 0.4rem;
+  /* border: 3px solid rgb(0, 0, 0); */
+  margin-top: 1rem;
+  border-radius: 1.1rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 17rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  box-shadow: 5px 8px 15px rgb(194, 189, 189);
+  display: flex;
+  color: #fdb617;
+  flex-direction: column;
+  align-items: center;
+  font-family: montserrat;
+}
+.EventCard:hover {
+  filter: grayscale(00%);
+  -webkit-filter: grayscale(00%);
+  width: 150%;
+  height: 20rem;
+  font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .EventCarousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: max-content;
+    width: 100%;
+  }
+  .Event_data {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+  .EventCard {
+    filter: grayscale(00%);
+    -webkit-filter: grayscale(00%);
+  }
+  .EventCard {
+    width: 70%;
+    height:max-content;
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
+  .EventCard:hover {
+    filter: grayscale(00%);
+    -webkit-filter: grayscale(00%);
+    width: 70%;
+    height: 45%;
+    font-size: 1.6rem;
+  }
+}

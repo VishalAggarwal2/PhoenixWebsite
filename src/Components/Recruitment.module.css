@@ -1,0 +1,28 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 85px;
+}
+
+iframe{
+    padding-bottom: 50px;
+}
+
+@media (max-width:750px) {
+    .main{
+        padding-bottom: 30px;
+    }
+  }
+
+  @media (max-width:450px) {
+    .main{
+        padding-bottom: 30px;
+    }
+
+    iframe{
+        padding-bottom: 20px;
+    }
+    
+   }

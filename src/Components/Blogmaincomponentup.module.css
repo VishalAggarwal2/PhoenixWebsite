@@ -1,0 +1,98 @@
+.maincontainer {
+  transition: all .4s;
+  display: flex;
+  width: 100%;
+  font-family: "Montserrat";
+  padding-top: 10px;
+  justify-content: center;
+  gap :2%;
+}
+.containerimage:hover{
+  transform: scale(1.02);
+  cursor: pointer;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+}
+.maincontainerright:hover{
+  transform: scale(1.02);
+  cursor: pointer;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+}
+.maincontainerleft {
+  width: 47%;
+  
+}
+.maincontainerright {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+ margin-bottom: 40px; 
+ gap: 10px;
+
+}
+.containerimage {
+  width: 100%;
+  border-radius: 6px;
+  height: 270px;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.blogdate {
+  font-size: 12px;
+}
+.blogheading {
+  font-size: 22px;
+}
+.blogsubheading {
+  font-size: 14px;
+
+  /**Truncate**/
+  overflow:hidden;
+  line-height: 1.2rem;
+  max-height: 4.8rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+}
+@media (max-width:1100px) {
+.maincontainer{
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}  
+.maincontainerleft{
+  width: 88%;
+  margin-bottom: 5px;
+}
+.maincontainerright{
+  width: 88%;
+
+}
+.blogdate {
+  font-size: 10px;
+}
+.blogheading {
+  font-size: 17px;
+}
+.blogsubheading {
+  font-size: 12px;
+}
+}
+
+@media (max-width:661px) {
+  .containerimage{
+    height: 200px;
+  }
+  .blogsubheading{
+    line-height: 1rem;
+    max-height: 3rem;
+  }
+}

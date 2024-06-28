@@ -1,0 +1,34 @@
+
+@media only screen and (min-width: 1024px){
+    .pic{
+        width: 30%;
+        object-fit: cover;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        border-radius: 10%;
+        cursor: pointer;
+    
+    }
+    .pic:hover{
+        transform: scale(1.1);
+    }
+
+
+    .test{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between ; 
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px){
+    .pic{
+        padding-top:3rem;
+        padding-bottom: 1rem;
+    }
+}
