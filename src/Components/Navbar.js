@@ -202,7 +202,7 @@ export default function Navbar(props) {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <a 
                 className={`${Navcss.hover_underline_animation} ${
                    Navcss.clickactive1
@@ -216,7 +216,7 @@ export default function Navbar(props) {
               >
                 <span className={`${Navcss.plinth}`}>Plinth'23</span>
               </a>
-            </li>
+            </li> */}
 
             <li>
               <Link
