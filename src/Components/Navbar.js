@@ -249,7 +249,7 @@ export default function Navbar(props) {
                 Events
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className={`${Navcss.hover_underline_animation} ${
                   isActive5 && Navcss.clickactive
@@ -258,7 +258,7 @@ export default function Navbar(props) {
               >
                 Contacts
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 className={`${Navcss.hover_underline_animation} ${
