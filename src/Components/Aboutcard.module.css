@@ -1,9 +1,9 @@
 .container {
   display: flex;
   border-radius: 2px;
-  width: 85%;
+  width: 100%;
   height: 220px;
- 
+  
 }
 .aboutimage {
   width: 100%;
@@ -14,14 +14,10 @@
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
   object-fit: cover;
-  border: solid white 4px;
 }
 .aboutimage:hover {
   cursor: pointer;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  transform: scale(1.05);
+  transform: scale(1.4);
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.3);
 }
 

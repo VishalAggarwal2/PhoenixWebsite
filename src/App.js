@@ -115,8 +115,9 @@ function App() {
             color: {
               value: ["#fec31c","#F9A105","#FEC423"]
             },
+            
             shape: {
-              type: "circle",
+              type: "square",
               stroke: {
                 width: 0,
                 color: "#000000"
@@ -131,17 +132,17 @@ function App() {
               }
             },
             opacity: {
-              value: 0.3,
+              value: 0.5,
               random: true,
               anim: {
                 enable: true,
-                speed: 0.3,
+                speed: 0.5,
                 opacity_min: 0,
                 sync: false
               }
             },
             size: {
-              value: 48,
+              value: 40,
               random: true,
               anim: {
                 enable: false,
