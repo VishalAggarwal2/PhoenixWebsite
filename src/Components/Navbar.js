@@ -317,7 +317,7 @@ export default function Navbar(props) {
                 href="https://noteforms.com/forms/phoenix-drone-workshop-xk4tjo"
                 target="_blank"
               >
-                Registration
+                Join Us
               </a>
             </li>
           </div>
