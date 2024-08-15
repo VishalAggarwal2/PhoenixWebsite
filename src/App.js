@@ -117,7 +117,7 @@ function App() {
             },
             
             shape: {
-              type: "square",
+              type: "circle",
               stroke: {
                 width: 0,
                 color: "#000000"
