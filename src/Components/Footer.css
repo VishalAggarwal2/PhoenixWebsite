@@ -48,7 +48,7 @@
     color: #ccc;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s ease, padding-left 0.3s ease;
+    transition: color 0.1s ease, padding-left 0.3s ease;
     position: relative;
 }
 
@@ -60,7 +60,7 @@
     width: 0;
     height: 2px;
     background-color: #ff6b6b;
-    transition: width 0.3s ease;
+    transition: width 0.2s ease;
 }
 
 .footer-section a:hover::before {
@@ -69,7 +69,7 @@
 
 .footer-section a:hover {
     color: #fff;
-    padding-left: 2vw;
+    transform: scale(1.2);
 }
 
 .social-icons {
@@ -82,11 +82,13 @@
     color: #ccc;
     font-size: 20px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: transform 0.2s ease,color 0s;
+
 }
 
 .social-icons a:hover {
     color: #ff6b6b;
+    transform: scale(1.5);
 }
 
 .upper-footer {
@@ -159,6 +161,8 @@
     border-top: 1px solid #9e9c9c;
     padding-top: 10px;
 }
+
+
 
 /* Responsive Styles */
 /* @media (max-width: 768px) {

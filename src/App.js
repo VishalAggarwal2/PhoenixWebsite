@@ -5,19 +5,18 @@ import {Routes,Route } from 'react-router-dom';
 import Blogmain from "./Components/Blogmainpage";
 import Homepage from "./Components/Homepage";
 import Errorpage from "./Components/Errorpage";
-import Fest from "./Components/google_form";
 import TeamsY20 from "./pages/TeamsY20"
 import TeamsY19 from "./pages/TeamsY19"
 import Credits from "./pages/CreditsPage"
 import Events from '../src/Components/Events/Events';
 import SingleBlog from "./Components/SingleBlog";
 import { Triangle } from 'react-loader-spinner';
+import JoinUs from "./Components/JoinUs";
 
   // Particle Background
   import { useCallback , useEffect } from "react";
   import Particles from "react-tsparticles";
   import { loadFull } from "tsparticles";
-// import Drone from "./Components/google_form";
 import Infobotics from "./Components/Infobotics";
 
 function App() {
@@ -93,6 +92,8 @@ function App() {
       <Route  path = "/infobotics" element={<div onClick={DisableNav}><Infobotics /></div>}/>
       {/* <Route  path = "/recruitment" element={<div onClick={DisableNav}><Fest DisableNav={DisableNav}/></div>}/> */}
       <Route  path = "/*" element={<div onClick={DisableNav}><Errorpage/></div>}/>
+      <Route  path = "/joinUs" element={<div onClick={DisableNav}><JoinUs/></div>}/>
+
       
     </Routes>
 

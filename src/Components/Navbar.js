@@ -305,20 +305,19 @@ export default function Navbar(props) {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`${Navcss.hover_underline_animation} ${
                   isActive8 && Navcss.clickactive
                 } `}
+                to="/joinUs"
                 onClick={()=>{
                   handleToggle8(); 
                   handleToggle();
                   gotoTop();
                 }}
-                href="https://noteforms.com/forms/phoenix-drone-workshop-xk4tjo"
-                target="_blank"
               >
                 Join Us
-              </a>
+              </Link>
             </li>
           </div>
         </ul>
