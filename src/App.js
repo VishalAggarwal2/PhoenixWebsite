@@ -12,7 +12,7 @@ import Events from '../src/Components/Events/Events';
 import SingleBlog from "./Components/SingleBlog";
 import { Triangle } from 'react-loader-spinner';
 import JoinUs from "./Components/JoinUs";
-
+import AdminLogin from "./Components/AdminLogin";
   // Particle Background
   import { useCallback , useEffect } from "react";
   import Particles from "react-tsparticles";
@@ -90,9 +90,9 @@ function App() {
       <Route  path = "/credits" element={<div onClick={DisableNav}><Credits /></div>}/>
       <Route  path = "/events" element={<div onClick={DisableNav}><Events /></div>}/>
       <Route  path = "/infobotics" element={<div onClick={DisableNav}><Infobotics /></div>}/>
-      {/* <Route  path = "/recruitment" element={<div onClick={DisableNav}><Fest DisableNav={DisableNav}/></div>}/> */}
       <Route  path = "/*" element={<div onClick={DisableNav}><Errorpage/></div>}/>
       <Route  path = "/joinUs" element={<div onClick={DisableNav}><JoinUs/></div>}/>
+      <Route  path = "/admin" element={<div onClick={DisableNav}><AdminLogin/></div>}/>
 
       
     </Routes>
@@ -221,7 +221,6 @@ function App() {
         }
       }
     />
-
     </div> }
     
     

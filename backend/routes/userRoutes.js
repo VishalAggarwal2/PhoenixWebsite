@@ -6,9 +6,9 @@ const { createUser, getUser,joinUs } = require('../controllers/userController');
 router.post('/create', createUser);
 
 // Route to get a user by ID
-router.post('/:id', getUser);
+
 
 router.post('/joinUs', joinUs);
-
+router.post('/:id', getUser);
 
 module.exports = router;

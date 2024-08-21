@@ -1,7 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-// Create a new user
+
 const createUser = async (req, res) => {
   try {
     const {email} = req.body;
@@ -18,7 +18,7 @@ const createUser = async (req, res) => {
   }
 };
 
-// Get a user by ID
+
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -48,7 +48,6 @@ const joinUs = async (req, res) => {
         email,
       },
     });
-
   
     res.status(201).json(newUser);
   } catch (error) {

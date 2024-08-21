@@ -8,7 +8,7 @@ const JoinUs = () => {
     message: '',
   });
 
-  const { name, email, message } = formData;
+  const { name, email} = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +22,7 @@ const JoinUs = () => {
     e.preventDefault();
 
     try {
-      await axios.post("/api/users/joinUs", { name, email });
+      await axios.post("/api/users/joinUs", {name,email}); 
       alert('Submission successful');
       setFormData({
         name: '',
@@ -44,7 +44,7 @@ const JoinUs = () => {
           name="name"
           placeholder="Full Name"
           style={{ width: '95%', padding: '10px', margin: '10px 0', border: '1px solid #ddd', borderRadius: '4px' }}
-          value={name}
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -53,18 +53,18 @@ const JoinUs = () => {
           name="email"
           placeholder="Email Address"
           style={{ width: '95%', padding: '10px', margin: '10px 0', border: '1px solid #ddd', borderRadius: '4px' }}
-          value={email}
+          value={formData.email}
           onChange={handleChange}
           required
         />
-        <textarea
+        { <textarea
           name="message"
           placeholder="Why do you want to join us?"
           style={{ width: '95%', padding: '10px', margin: '10px 0', border: '1px solid #ddd', borderRadius: '4px', height: '100px' }}
-          value={message}
+          value={formData.message}
           onChange={handleChange}
           required
-        />
+        /> }
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#fa8241', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '1rem' }}>Submit</button>
       </form>
     </div>

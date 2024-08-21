@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation} from "react-router-dom";
 import Navcss from "../Navbar.module.css";
+import adminIcon from '../images/adminIcon2.png'
 
 export default function Navbar(props) {
   const [isActive, setActive] = useState(false);
@@ -168,9 +169,29 @@ export default function Navbar(props) {
     handleToggle3();
   return (
     <>
+
+    
       <nav className={scroll && Navcss.navbar}>
         <ul className={Navcss.nav_list}>
           <div className={Navcss.logo}>
+          
+          <li>
+              <Link
+                className={`${Navcss.hover_underline_animation} ${
+                  isActive8 && Navcss.clickactive
+                } ` && Navcss.adminIcon}
+                to="/admin"
+                onClick={()=>{
+                  handleToggle8(); 
+                  handleToggle();
+                  gotoTop();
+                }}
+              >
+                <img src={adminIcon} alt="Admin" width="45" height="45" ></img>
+              </Link>
+            </li>
+
+
             <NavLink onClick={()=>{
                   handleToggle1(); 
                   // handleToggle();
@@ -184,6 +205,8 @@ export default function Navbar(props) {
               />
             </NavLink>
           </div>
+          
+
           
           <div className={`${Navcss.rightnav} ${!isActive && Navcss.rightnav1} ${!isCheck && Navcss.barNotActive}`} >
             <li>
@@ -319,6 +342,9 @@ export default function Navbar(props) {
                 Join Us
               </Link>
             </li>
+
+            
+
           </div>
         </ul>
         <div className={Navcss.burger} onClick={handleToggle}>
