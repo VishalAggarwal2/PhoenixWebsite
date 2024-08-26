@@ -1,5 +1,4 @@
-import React, { useState } from "react"; // Don't forget to import React
-// import Data from "./EventsData";
+import React, { useState } from "react"; 
 import classes from "./Styles/SingleEvent.module.css";
 import Data from "./EventsData";
 import left from "./Assets/left-arrow.png";

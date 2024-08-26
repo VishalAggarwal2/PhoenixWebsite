@@ -2,6 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 
+
 const createUser = async (req, res) => {
   try {
     const {email} = req.body;
@@ -55,9 +56,67 @@ const joinUs = async (req, res) => {
     res.status(500).json({ message: 'Error creating user.' });
   }
 }
+const addEvent = async (req, res) => {
+  try {
+    const { title, description, images } = req.body;
+
+    // Check if images is defined and is a string
+    if (typeof images !== 'string') {
+      return res.status(400).json({ message: 'Invalid images format' });
+    }
+
+    // Process comma-separated URLs
+    const imageUrlArray = images.split(',').map(url => url.trim());
+
+    // Create the event in the database
+    const newEvent = await prisma.event.create({
+      data: {
+        title,
+        description,
+        images: imageUrlArray.join(','), // Store as comma-separated string
+      },
+    });
+
+    res.status(201).json(newEvent);
+  } catch (error) {
+    console.error('Error creating event:', error);
+    res.status(500).json({ message: 'Error creating event.' });
+  }
+};
+
+const addBlog = async (req, res) => {
+  try {
+    const { title, description, images } = req.body;
+
+    // Check if images is defined and is a string
+    if (typeof images !== 'string') {
+      return res.status(400).json({ message: 'Invalid images format' });
+    }
+
+    // Process comma-separated URLs
+    const imageUrlArray = images.split(',').map(url => url.trim());
+
+    // Create the blog in the database
+    const newBlog = await prisma.blog.create({
+      data: {
+        title,
+        description,
+        images: imageUrlArray.join(','), // Store as comma-separated string
+      },
+    });
+
+    res.status(201).json(newBlog);
+  } catch (error) {
+    console.error('Error creating Blog:', error);
+    res.status(500).json({ message: 'Error creating Blog.' });
+  }
+};
+
 
 module.exports = {
   createUser,
   getUser,
   joinUs,
+  addEvent,
+  addBlog,
 };

@@ -22,7 +22,7 @@ function AdminLogin() {
         );
 
         if (isValid) {
-            alert('Login successful!');
+            navigate('/adminDashboard');
         } else {
             console.log('Invalid credentials');
             alert('Invalid email or password');
