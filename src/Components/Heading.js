@@ -6,7 +6,7 @@ import HeadingCss from "./Heading.module.css";
 return (
     <div className={HeadingCss.headingdiv}>
       <h1 className={HeadingCss.heading}>
-        Our Team
+         Meet Our Team ..
     </h1>
     
     </div>

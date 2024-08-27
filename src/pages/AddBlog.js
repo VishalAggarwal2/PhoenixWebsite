@@ -13,17 +13,8 @@ const AddBlog = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('title', eventName);
-        formData.append('description', eventInfo);
-        formData.append('images', images);  // Add comma-separated URLs
-
         try {
-            const response = await axios.post('/api/users/addBlog', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
+            const response = await axios.post('/api/users/addBlog',{eventName,eventInfo,images});
 
             console.log('Blog added successfully:', response.data);
             // Optionally reset form fields

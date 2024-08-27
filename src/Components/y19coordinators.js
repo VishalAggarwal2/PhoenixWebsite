@@ -55,7 +55,7 @@ function Coordinator(props) {
                         />
                     </div>
                 </div>
-                <div className={CoordiCss.container}>
+                {/* <div className={CoordiCss.container}>
                     <div className={CoordiCss.imageDiv}>
                         <div className={CoordiCss.images}>
                             <img className={CoordiCss.mainimage} src={`/images/${props.img4}`} alt="coordinator1" />
@@ -64,12 +64,12 @@ function Coordinator(props) {
                         <Details
                        
                             name={props.name4}
-                            link1={props.link10}
-                            link2={props.link11}
-                            link3={props.link12}
+                            link10={props.link10}
+                            link11={props.link11}
+                            link12={props.link12}
                         />
                     </div>
-                </div>
+                </div> */}
                 
 
             </div>

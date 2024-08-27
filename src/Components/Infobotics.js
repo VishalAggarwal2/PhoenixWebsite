@@ -1,5 +1,7 @@
 import React from 'react';
 import './Infobotics.css'; // Import the CSS file
+import backgroundImage from '../images/phoenix-logo.jpeg';
+
 const profiles = [
   {
     id: 9,
@@ -60,7 +62,7 @@ const profiles = [
 const Infobotics = () => {
   return (
     
-    <div className="profile-page">
+    <div className="profile-page" >
       {profiles.map(profile => (
         <div key={profile.id} className="profile-card">
           <img src={profile.image} alt={profile.title} className="profile-image" />

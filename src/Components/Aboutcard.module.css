@@ -1,25 +1,27 @@
-.container {
+/* .container {
   display: flex;
   border-radius: 2px;
-  width: 100%;
+  width: 85%;
   height: 220px;
+ 
 }
 .aboutimage {
   width: 100%;
-  margin-right:65px;
+  margin-right:35px;
   height: 100%;
   border-radius: 10px;
-  filter: grayscale(0%);
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
+  /* filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); 
   object-fit: cover;
-  transform: scale(1.4,1.4);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.23)
+  border: solid white 4px;
+  transition: 1s ease;
 }
 .aboutimage:hover {
-  z-index: 1;
   cursor: pointer;
-  transform: scale(1.7);
+  
+  /* transform: rotate(1turn); 
+  transform: scale(1.1);
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.3);
 }
 
@@ -57,6 +59,93 @@
     width: 94px;
     margin: 0px;
     margin-left: 3px;
+    border: solid white 3px;
+  }
+  .container{
+    height: 140px;
+    width: 85%;
+    margin-right: 10px;
+  }
+}  */
+
+
+
+.container {
+  display: flex;
+  border-radius: 2px;
+  width: 85%;
+  height: 220px;
+  overflow: visible;
+  position: relative;
+}
+
+.aboutimage {
+  width: 100%;
+  margin-right:35px;
+  height: auto;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  border-radius: 10px;
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  object-fit: cover;
+  border:none;
+}
+
+.aboutimage:hover {
+  cursor: pointer;
+  /* filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); */
+  transform: scale(1.1);
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.3);
+  border: solid white 2px;
+}
+
+
+/* Animation class */
+.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media(min-width:550px){
+  .aboutimage {
+    height: 200px;
+    width: 98%;
+    margin-left: 5px;
+  }
+}
+@media (min-width:1080px) {
+  .aboutimage{
+    height: 220px;
+    width: 150px;
+  }
+  
+}
+@media(min-width:1450px){
+  .aboutimage {
+    height: 260px;
+    width: 189.9px;
+  }
+}
+@media(min-width:1500px){
+  .aboutimage {
+    height: 300px;
+    width : 199.18px;
+  }
+}
+
+
+
+@media (max-width:550px){
+  .aboutimage{
+    width: 94px;
+    margin: 0px;
+    margin-left: 3px;
+    border: solid white 3px;
   }
   .container{
     height: 140px;

@@ -17,6 +17,7 @@
     padding: 20px;
     margin: 10px;
     width: 200px; /* Fixed width for each card */
+    height: 300px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform */
   }
@@ -36,6 +37,7 @@
   .profile-title {
     margin: 10px 0;
     font-size: 1.2em;
+    margin-bottom: 2rem;
   }
   
   .more-info-button {

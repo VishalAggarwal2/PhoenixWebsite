@@ -12,18 +12,8 @@ const AddEvent = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const formData = new FormData();
-        formData.append('title', eventName);
-        formData.append('description', eventInfo);
-        formData.append('images', images); 
-
         try {
-            const response = await axios.post('/api/users/addEvent', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
+            const response = await axios.post("/api/users/addEvent",{eventName,eventInfo,images});
 
             console.log('Event added successfully:', response.data);
             setEventName('');

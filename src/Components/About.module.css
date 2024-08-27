@@ -9,35 +9,70 @@
     background-size: cover;   
     background-position: center;     
     margin-top: 100px;
-    height: 120px;
-
+    height: 1160px;
+ display: flex;
+ flex-direction: column;
 }
 .heading {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: montserrat;
-  color: rgb(0, 0, 0);
-  font-size: 39px;
+  color: white;
+  font-size: 45px;
   padding-top: 50px;
-  padding-bottom: 5px;
+  filter: drop-shadow(0 0 10px whitesmoke);
+}
+.context{
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 40px;
+  width: 85%;
+  height: auto;
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  /* font-size: 20px;
+  padding-top: 40px;
+  color: black; */
+}
+.context p {
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: 500;
+  padding-top: 40px;
+  color: black;
 }
 
 @media (max-width: 1450px) {
   .container {
-    height: 850px;
+    height: 1050px;
+  }
+  .context p{
+    font-size: 22px;
+    line-height: 26px;
   }
 }
 @media (max-width: 1080px) {
   .container {
-    height: 1170px;
+    height: 1340px;
+  }
+  .context p{
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 @media (max-width: 550px) {
   .container {
-    height: 920px;
+    height: 1150px;
   }
   .heading{
     font-size: 30px;
+  }
+  .context{
+    margin-bottom: 20px;
+  }
+  .context p{
+    font-size: 16px;
+    line-height: 20px;
   }
 }

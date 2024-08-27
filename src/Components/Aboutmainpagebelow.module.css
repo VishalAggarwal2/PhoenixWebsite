@@ -19,9 +19,9 @@
 }
 
 .text {
-  font-family: Raleway;
+  font-family: "Roboto" , sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 22px;
   margin-right: 6%;
   margin-top: 8%;
   width:120%
@@ -29,7 +29,7 @@
 @media (min-width: 1500px) {
   .text {
     margin-right: 4%;
-    font-size: 20px;
+    font-size: 24px;
     margin-top: 5%;
   }
 }
@@ -43,11 +43,13 @@ margin-top: -50px;
 .text{
   width: 100%;
   margin-left: 7%;
+  font-size: 18px;
 }
 }
 @media (min-width: 1420px) {
 .text{
   margin-top: 150px;
+  font-size: 24px;
 }
 }
 
@@ -56,6 +58,7 @@ margin-top: -50px;
     width: 92%;
     margin-left: 0%;
     margin-top: 45px;
+    font-size: 14px;
    }
   .middle {
     margin-top: -30px;

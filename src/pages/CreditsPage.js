@@ -3,57 +3,48 @@ import Heading from "../Components/CreditsHeading";
 import TeamCss from "./teams.module.css";
 import Mentors from "../Components/Mentors";
 import Developers from "../Components/Developers";
-import Designer from "../Components/Designer";
 
 const creditsData = {
   mentors: [
     {
-      name: "Kingshuk Ghosh",
-      img: "SoftwareDivisonHead1.png",
-      link1: "https://www.linkedin.com/in/kingshuk-ghosh-350b691b8",
-      link2: "https://instagram.com/mrkingshuk_?igshid=YmMyMTA2M2Y=",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=20ucs098@lnmiit.ac.in",
+      name: "Vishal Aggarwal",
+      img: "mentor1.jpg",
+      link1: "https://www.linkedin.com/in/vishal-aggarwal-414730248?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYZ4Iw4C1RduaIbK1I03BJw%3D%3D",
+      link2: "https://www.instagram.com/vishalaggarwal270?igsh=YjM0NzlleTl1cjJn",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucs228@lnmiit.ac.in",
     },
     {
-      name: "Vaibhav Jaiswal",
-      img: "SoftwareDivisonHead2.png",
-      link1: "https://www.linkedin.com/in/vaibhav-jaiswal01",
-      link2: "https://www.instagram.com/the_curious__1/",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=20ucc126@lnmiit.ac.in",
+      name: "Gaurav Sharma",
+      img: "mentor2.jpg",
+      link1: "https://www.linkedin.com/in/gaurav-sharma-1603b020a/",
+      link2: "https://www.instagram.com/the_gaurav_sh?igsh=YjdpM3BzdjN1NDJt",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucs075@lnmiit.ac.in",
     },
   ],
   developers: [
     {
-      name: "Gaurav Agrawal",
-      img: "gaurav.png",
-      link1: "https://www.linkedin.com/in/gaurav-agrawal-45119722a/",
-      link2: "https://www.instagram.com/gaurav_a.g/",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=21ucc041@lnmiit.ac.in",
+      name: "Utkarsh Bansal",
+      img: "utkarshb.jpg",
+      link1: "https://www.linkedin.com/in/utkarsh-bansal-3437b3287/",
+      link2: "https://www.instagram.com/utkarsh_bansal_?igsh=aXhrZ2hsamE2ejBo",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=23ucs728@lnmiit.ac.in",
     },
     {
-      name: "Vishal Kumar",
-      img: "vishal1.png",
-      link1: "https://www.linkedin.com/in/v15h4l/",
-      link2: "https://www.instagram.com/vi5halkumar/",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=21ucc116@lnmiit.ac.in",
+      name: "Akshat Mehta",
+      img: "akshatm.jpg",
+      link1: "https://www.linkedin.com/in/akshat-mehta-8678b1280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/akshuuu._.m95?igsh=MWEzb2d4eWw2NXY3Zg==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=23ucs525@lnmiit.ac.in",
     },
     {
-      name: "Ramsha Iqbal",
-      img: "ramsha.png",
-      link1: "https://www.linkedin.com/in/ramsha-iqbal-332620211/",
-      link2: "https://www.instagram.com/_ramsha_iqbal_/",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=21ume042@lnmiit.ac.in",
+      name: "Aryan Gupta",
+      img: "aryang.jpg",
+      link1: "https://www.linkedin.com/in/arryanngupta/",
+      link2: "https://www.instagram.com/arryanngupta/",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=23ucc522@lnmiit.ac.in",
     },
   ],
-  designer: [
-    {
-      name: "Vishal Kumar",
-      img: "vishal1.png",
-      link1: "https://www.linkedin.com/in/v15h4l/",
-      link2: "https://www.instagram.com/vi5halkumar/",
-      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=21ucc116@lnmiit.ac.in",
-    },
-  ],
+  
 };
 
 function Teams(props) {
@@ -90,13 +81,7 @@ function Teams(props) {
         link8={creditsData.developers[2].link2}
         link9={creditsData.developers[2].link3}
       />
-      <Designer
-        name1={creditsData.designer[0].name}
-        img1={creditsData.designer[0].img}
-        link1={creditsData.designer[0].link1}
-        link2={creditsData.designer[0].link2}
-        link3={creditsData.designer[0].link3}
-      />
+      
     </div>
   );
 }
