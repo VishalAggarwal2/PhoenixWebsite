@@ -21,7 +21,7 @@ model joinUs {
   @@map("joinus") 
 }
 
-model event {
+model event_new {
   id          Int        @id @default(autoincrement())
   title       String
   description String

@@ -4,23 +4,26 @@ import axios from 'axios';
 const AddEvent = () => {
     const [eventName, setEventName] = useState('');
     const [eventInfo, setEventInfo] = useState('');
-    const [images, setImages] = useState('');  
+    const [images, setImages] = useState('');  // Comma-separated URLs
 
     const handleURLChange = (e) => {
-        setImages(e.target.value);  
+        setImages(e.target.value);  // Update state with comma-separated URLs
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         try {
-            const response = await axios.post("/api/users/addEvent",{eventName,eventInfo,images});
-
+            
+            const response = await axios.post('/api/users/addEvent',{eventName,eventInfo,images});
+            
             console.log('Event added successfully:', response.data);
+            //2Optionally reset form fields
             setEventName('');
             setEventInfo('');
             setImages('');
         } catch (error) {
-            console.error('Error adding event:', error);
+            console.error('Error adding Event:', error);
         }
     };
 
@@ -35,7 +38,7 @@ const AddEvent = () => {
                         id="eventName"
                         value={eventName}
                         onChange={(e) => setEventName(e.target.value)}
-                        placeholder="Enter event name"
+                        placeholder="Enter Event name"
                         required
                         style={inputStyle}
                     />
@@ -47,24 +50,23 @@ const AddEvent = () => {
                         id="eventInfo"
                         value={eventInfo}
                         onChange={(e) => setEventInfo(e.target.value)}
-                        placeholder="Enter event details"
+                        placeholder="Enter Event details"
                         required
                         style={{ ...inputStyle, height: '100px' }}
                     ></textarea>
-                </div>
+                </div> 
 
                 <div style={inputGroupStyle}>
                     <label htmlFor="images" style={labelStyle}>Image URLs (comma-separated):</label>
                     <input
                         type="text"
-                        id="imageURLs"
+                        id="images"
                         value={images}
                         onChange={handleURLChange}
                         placeholder="Enter image URLs"
                         style={inputStyle}
                     />
                 </div>
-
                 <button type="submit" style={buttonStyle}>Add Event</button>
             </form>
         </div>

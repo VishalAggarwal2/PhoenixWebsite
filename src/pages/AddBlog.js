@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const AddBlog = () => {
-    const [eventName, setEventName] = useState('');
-    const [eventInfo, setEventInfo] = useState('');
+    const [blogName, setblogName] = useState('');
+    const [blogInfo, setblogInfo] = useState('');
     const [images, setImages] = useState('');  // Comma-separated URLs
 
     const handleURLChange = (e) => {
@@ -14,12 +14,13 @@ const AddBlog = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/api/users/addBlog',{eventName,eventInfo,images});
-
+            
+            const response = await axios.post('/api/users/addBlog',{blogName,blogInfo,images});
+            
             console.log('Blog added successfully:', response.data);
-            // Optionally reset form fields
-            setEventName('');
-            setEventInfo('');
+            //2Optionally reset form fields
+            setblogName('');
+            setblogInfo('');
             setImages('');
         } catch (error) {
             console.error('Error adding Blog:', error);
@@ -27,16 +28,16 @@ const AddBlog = () => {
     };
 
     return (
-        <div className="add-event-container" style={containerStyle}>
+        <div className="add-blog-container" style={containerStyle}>
             <h2>Add New Blog</h2>
             <form onSubmit={handleSubmit} style={formStyle}>
                 <div style={inputGroupStyle}>
-                    <label htmlFor="eventName" style={labelStyle}>Blog Name:</label>
+                    <label htmlFor="blogName" style={labelStyle}>Blog Name:</label>
                     <input
                         type="text"
-                        id="eventName"
-                        value={eventName}
-                        onChange={(e) => setEventName(e.target.value)}
+                        id="blogName"
+                        value={blogName}
+                        onChange={(e) => setblogName(e.target.value)}
                         placeholder="Enter Blog name"
                         required
                         style={inputStyle}
@@ -44,16 +45,16 @@ const AddBlog = () => {
                 </div>
 
                 <div style={inputGroupStyle}>
-                    <label htmlFor="eventInfo" style={labelStyle}>Blog Info:</label>
+                    <label htmlFor="blogInfo" style={labelStyle}>Blog Info:</label>
                     <textarea
-                        id="eventInfo"
-                        value={eventInfo}
-                        onChange={(e) => setEventInfo(e.target.value)}
+                        id="blogInfo"
+                        value={blogInfo}
+                        onChange={(e) => setblogInfo(e.target.value)}
                         placeholder="Enter Blog details"
                         required
                         style={{ ...inputStyle, height: '100px' }}
                     ></textarea>
-                </div>
+                </div> 
 
                 <div style={inputGroupStyle}>
                     <label htmlFor="images" style={labelStyle}>Image URLs (comma-separated):</label>
@@ -66,7 +67,6 @@ const AddBlog = () => {
                         style={inputStyle}
                     />
                 </div>
-
                 <button type="submit" style={buttonStyle}>Add Blog</button>
             </form>
         </div>

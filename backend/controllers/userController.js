@@ -56,62 +56,58 @@ const joinUs = async (req, res) => {
     res.status(500).json({ message: 'Error creating user.' });
   }
 }
-const addEvent = async (req, res) => {
-  try {
-    const { title, description, images } = req.body;
 
-    // Check if images is defined and is a string
-    if (typeof images !== 'string') {
-      return res.status(400).json({ message: 'Invalid images format' });
-    }
+const addEvent = async (req, res) =>{
+  console.log("Hello")
+  const { eventName, eventInfo,images } = req.body;
 
-    // Process comma-separated URLs
-    const imageUrlArray = images.split(',').map(url => url.trim());
-
-    // Create the event in the database
-    const newEvent = await prisma.event.create({
-      data: {
-        title,
-        description,
-        images: imageUrlArray.join(','), // Store as comma-separated string
-      },
-    });
-
-    res.status(201).json(newEvent);
-  } catch (error) {
-    console.error('Error creating event:', error);
-    res.status(500).json({ message: 'Error creating event.' });
+  if (!eventName || !eventInfo) {
+      return res.status(400).json({ error: 'Event name and event info are required.' });
   }
-};
 
-const addBlog = async (req, res) => {
   try {
-    const { title, description, images } = req.body;
-
-    // Check if images is defined and is a string
-    if (typeof images !== 'string') {
-      return res.status(400).json({ message: 'Invalid images format' });
-    }
-
-    // Process comma-separated URLs
-    const imageUrlArray = images.split(',').map(url => url.trim());
-
-    // Create the blog in the database
-    const newBlog = await prisma.blog.create({
-      data: {
-        title,
-        description,
-        images: imageUrlArray.join(','), // Store as comma-separated string
-      },
-    });
-
-    res.status(201).json(newBlog);
+      const eventSample = await prisma.event_new.create({
+          data: {
+              title: eventName,
+              description: eventInfo,
+              images:images,
+          },
+      });
+      console.log("Hello world")
+      res.status(201).json(eventSample);
   } catch (error) {
-    console.error('Error creating Blog:', error);
-    res.status(500).json({ message: 'Error creating Blog.' });
+      console.error('Error creating Event:', error);
+      res.status(500).json({ error: 'Internal server error' });
   }
-};
 
+
+}
+
+const addBlog = async (req, res) =>{
+  
+  const { blogName, blogInfo,images } = req.body;
+
+  if (!blogName || !blogInfo) {
+      return res.status(400).json({ error: 'Event name and event info are required.' });
+  }
+
+  try {
+      const newBlog = await prisma.blog.create({
+          data: {
+              title: blogName,
+              description: blogInfo,
+              images:images,
+          },
+      });
+
+      res.status(201).json(newBlog);
+  } catch (error) {
+      console.error('Error creating blog:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+
+
+}
 
 module.exports = {
   createUser,
