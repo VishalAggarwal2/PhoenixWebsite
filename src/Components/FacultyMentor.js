@@ -15,7 +15,7 @@ function FacultyMentor() {
                 </div>
                 <div className={fcmen.name}>Dr. Atul Mishra</div>
                 <div className={fcmen.desc}>
-                    Assistant Professorknk<br />
+                    Assistant Professor<br />
                     Mechanical And Mechatronics  Department</div>
                     <div className={fcmen.links}>
                     <a href="http://linkedin.com/in/atul-mishra-phd-aaa89264" target="_blank" rel="noopener noreferrer"><FaLinkedinIn size={26} className={DetailsCss.iconStyle}/></a>
