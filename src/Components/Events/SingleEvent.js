@@ -1,6 +1,8 @@
-import React, { useState } from "react"; 
-import classes from "./Styles/SingleEvent.module.css";
+import React, { useState } from "react"; // Don't forget to import React
 import Data from "./EventsData";
+import classes from "./Styles/SingleEvent.module.css";
+
+
 import left from "./Assets/left-arrow.png";
 import right from "./Assets/right-arrow.png";
 
@@ -25,7 +27,9 @@ const SingleEvent = (props) => {
   return (
     <div>
       <div className={classes.single_event_container}>
-        <section className={classes.single_event_description}>
+
+       
+         <section className={classes.single_event_description}>
           <div key={event.id} className={classes.event_title}>
             {event.title}
           </div>
@@ -51,9 +55,10 @@ const SingleEvent = (props) => {
             onClick={nextImage}
             className={classes.arrow}
           />
-        </section>
+        </section> 
       </div>
-    </div>
+      </div>
+   
   );
 };
 

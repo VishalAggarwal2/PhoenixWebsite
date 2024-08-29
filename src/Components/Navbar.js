@@ -52,15 +52,7 @@ export default function Navbar(props) {
     <nav className={`${scroll ? Navcss.navbar : ''}`}>
       <ul className={Navcss.nav_list}>
         <div className={Navcss.logo}>
-          <li>
-            <Link
-              className={`${Navcss.hover_underline_animation} ${activeLink === "Admin" ? Navcss.clickactive : ''}`}
-              to="/admin"
-              onClick={() => handleLinkClick("Admin")}
-            >
-              <img src={adminIcon} alt="Admin" width="45" height="45" />
-            </Link>
-          </li>
+          
 
           <NavLink
             onClick={() => handleLinkClick("Home")}
@@ -149,6 +141,24 @@ export default function Navbar(props) {
               style={{ color: isJoinUsRoute ? 'white' : '' }}
             >
               Join Us
+            </Link>
+          </li>
+          <li>
+          <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Admin" ? Navcss.clickactive : ''}`}
+              to="/admin"
+              onClick={() => handleLinkClick("Admin")}
+            >
+              <img
+                src={adminIcon}
+                alt="Admin"
+                width="45"
+                height="45"
+                style={{
+                  borderRadius: "50%", // Makes the image round
+                  boxShadow: "2px 2px 6px rgba(0, 0, 0, 0.15)" // Applies the shadow
+                }}
+              />
             </Link>
           </li>
         </div>

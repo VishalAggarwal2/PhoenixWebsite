@@ -267,7 +267,7 @@ function App() {
                   },
                 },
                 opacity: {
-                  value: 0.5,
+                  value: 0.4,
                   random: true,
                   anim: {
                     enable: true,

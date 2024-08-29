@@ -3,7 +3,11 @@ import SingleEvent from "./SingleEvent";
 import classes from "./Styles/EventCarousel.module.css";
 import { useState } from "react";
 
+
+
 const EventCarousel = () => {
+
+   
   const [showMainEvent, setMainEvent] = useState(1);
   const MainEventHandler = (id) => {
     setMainEvent(id);
@@ -27,6 +31,7 @@ const EventCarousel = () => {
             >
               <img src={item.poster} alt={item.title}></img>
               <h3>{item.title}</h3>
+             
             </div>
           ))}
         </div>

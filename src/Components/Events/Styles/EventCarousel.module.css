@@ -6,12 +6,14 @@
   overflow: hidden;
   cursor: pointer;
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
-  height: 25rem;
+  height: 20rem;
   margin: 10px;
   /* border: 2px solid red; */
-  margin-top: 5rem;
+  margin-top: 30px;
 }
+
 .Event_data {
   width: 100%;
   display: flex;
@@ -23,28 +25,41 @@
 }
 .EventCard {
   margin: 0.4rem;
+  /* border: 3px solid rgb(0, 0, 0); */
   margin-top: 1rem;
   border-radius: 1.1rem;
   padding: 0.5rem;
   font-size: 1.4rem;
   width: 100%;
-  height: 17rem;
+  height: 13rem;
   background-repeat: no-repeat;
   background-size: cover;
+  
+ 
   box-shadow: 5px 8px 15px rgb(194, 189, 189);
   display: flex;
   color: #fdb617;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  font-family: montserrat;
+  font-family: "Roboto" , sans-serif;
+  transition: 1s ease;
+ 
 }
+.EventCard:hover >h3{
+  font-size: 1.7rem;
+  padding-top: 15px;
+}
+
 .EventCard:hover {
   filter: grayscale(00%);
   -webkit-filter: grayscale(00%);
   width: 150%;
-  height: 20rem;
+  height: 17rem;
   font-size: 1.6rem;
+
 }
+
 
 @media only screen and (max-width: 768px) {
   .EventCarousel {
@@ -73,7 +88,7 @@
   .EventCard:hover {
     filter: grayscale(00%);
     -webkit-filter: grayscale(00%);
-    width: 70%;
+    width: 74%;
     height: 45%;
     font-size: 1.6rem;
   }

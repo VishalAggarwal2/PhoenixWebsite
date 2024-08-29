@@ -9,15 +9,17 @@
   justify-content: space-around;
 }
 .single_event_description {
-  width: 40rem;
+  width: 35rem;
   z-index: 10;
   height: max-content;
-  margin-right: 2rem;
+  margin-top: 30px;
+ margin-left: -20px;
+  text-align: left;
 }
 
 .event_title {
-  font-size: 3.5rem;
-  font-family: montserrat;
+  font-size: 3rem;
+  font-family: "montserrat" , sans-serif;
   font-weight: 600;
 }
 @font-face {
@@ -25,16 +27,23 @@
   src: url("../Assets/Gilroy-SemiBold.ttf");
 }
 .event_description {
-  margin: 10px;
+  padding-top: 20px;
+  
+  /* margin: 10px; */
   font-family: gilory;
-  font-size: 1rem;
+  font-size: 15px;
+  transition: 0.7s ease;
+}
+.event_description:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(128, 128, 128, 0.545));
 }
 
 .design {
   position: absolute;
-  width: 60%;
+  width: 55%;
   left: -4rem;
-  height: 27rem;
+  height: 28rem;
   background-color: #fdb617;
   border-top-right-radius: 300px;
   border-bottom-right-radius: 300px;
@@ -43,18 +52,22 @@
   width: 15rem;
 }
 .images {
-  width: 33rem;
+  width: 35rem;
   display: flex;
   justify-content: space-between;
+  transition: 0.7s ease;
+  margin-top: 30px;
 }
-
+.images:hover{
+  transform: scale(1.06);
+}
 .poster img {
-  width: 28rem;
-  height: 28rem;
+  width: 35rem;
+  height: 25rem;
   border-radius: 20px;
-  border: 5px solid rgb(204, 198, 198);
-  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
-  transition: 0.4s ease-in-out transform;
+  /* filter: drop-shadow(0 70px 40px -20px rgb(228, 8, 8)); */
+  box-shadow: 10px 10px 80px 0px rgba(4, 4, 4, 0.632);
+  transition: 0.4s ease transform;
 }
 .arrow {
   cursor: pointer;
@@ -84,10 +97,49 @@
   opacity: 0;
   transition: opacity 300ms;
 }
+.event{
+  height: auto;
+  width: 99%;
+  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.event h1{
+  text-align: center;
+  font-size: 90px;
+  color: black;
+}
+@media only screen and (max-width: 1280px) {
+.images{
+  width: 30rem;
 
-@media only screen and (max-width: 768px) {
+}
+.poster img{
+  width: 30rem;
+  height: 22rem;
+}
+.design{
+  width: 60%;
+  height: 25rem;
+}
+.event_title{
+  font-size: 2.6rem;
+}
+.event_description{
+  font-size: 14px;
+}
+}
+
+
+@media only screen and (max-width: 1068px) {
   .EventsPage {
     overflow: hidden;
+  }
+  .design{
+    width: 100%;
   }
   .single_event_container {
     font-size: 1px;
@@ -96,6 +148,10 @@
     overflow: hidden;
     flex-wrap: wrap;
     width: 100%;
+  }
+  .single_event_description{
+    width: 80%;
+    text-align: center;
   }
   .poster {
     margin-top: 5rem;
@@ -110,3 +166,45 @@
     font-weight: 700;
   }
 }
+@media only screen and (max-width: 768px) {
+  .EventsPage {
+    overflow: hidden;
+  }
+  .design{
+    width: 100%;
+    
+      background-color: white;
+    
+  
+  }
+  .single_event_container {
+    font-size: 1px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .single_event_description{
+    width: 80%;
+    text-align: center;
+    height: max-content;
+  }
+  .event_description{
+    height: auto;
+  }
+  .poster {
+    margin-top: 5rem;
+  }
+  .poster img {
+    width: 17rem;
+    height: 20rem;
+  }
+  .event_title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+
