@@ -5,6 +5,8 @@ const Credentials = [
     { email: process.env.REACT_APP_ADMIN_EMAIL_1, password: process.env.REACT_APP_ADMIN_PASSWORD_1 },
     { email: process.env.REACT_APP_ADMIN_EMAIL_2, password: process.env.REACT_APP_ADMIN_PASSWORD_2 },
     { email: process.env.REACT_APP_ADMIN_EMAIL_3, password: process.env.REACT_APP_ADMIN_PASSWORD_3 },
+    { email: process.env.REACT_APP_ADMIN_EMAIL_4, password: process.env.REACT_APP_ADMIN_PASSWORD_4 },
+
 ];
 
 function AdminLogin() {
