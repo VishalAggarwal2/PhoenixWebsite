@@ -1,11 +1,25 @@
 import Data from "./EventsData";
 import SingleEvent from "./SingleEvent";
 import classes from "./Styles/EventCarousel.module.css";
-import { useState } from "react";
-
-
+import axios from 'axios';
+import React, { useState, useEffect } from "react";
 
 const EventCarousel = () => {
+
+  const [eventsData, setEventsData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from backend
+    axios
+      .get("/api/users/getBlogs")
+      .then((response) => {
+        // Assuming the backend returns the blog data as an array
+        setEventsData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching blogs:", error);
+      });
+  }, []);
 
    
   const [showMainEvent, setMainEvent] = useState(1);

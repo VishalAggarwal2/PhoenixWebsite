@@ -105,9 +105,19 @@ const addBlog = async (req, res) =>{
       console.error('Error creating blog:', error);
       res.status(500).json({ error: 'Internal server error' });
   }
-
-
 }
+
+const getAllBlogs = async (req, res) => {
+  try {
+    const blogs = await prisma.blog.findMany(); // Fetch all blogs from the blog table
+    res.json(blogs);
+  } catch (error) {
+    console.error('Error fetching blogs:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    await prisma.$disconnect();
+  }
+};
 
 module.exports = {
   createUser,
@@ -115,4 +125,5 @@ module.exports = {
   joinUs,
   addEvent,
   addBlog,
+  getAllBlogs,
 };
