@@ -181,6 +181,29 @@
     outline: 2px solid #0056b3;
   }
 
+  .container2 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 10vh;          /* Full viewport height */
+  }
+  
+  .drive-button {
+    padding: 10px 20px;
+    background-color: #156bf4; /* Google Drive blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .drive-button:hover {
+    transform: scale(1.1);
+    background-color: #357ae8; /* Slightly darker blue on hover */
+  }
   /* Adjust styles for smaller screens */
 @media (max-width: 768px) {
     .blogCard {

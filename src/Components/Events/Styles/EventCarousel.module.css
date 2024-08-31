@@ -64,6 +64,30 @@
   padding-top: 15px; /* Add space above title */
 }
 
+.container2 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  height: 0vh;          /* Full viewport height */
+}
+
+.drive-button {
+  padding: 0px 20px;
+  background-color: #f47915; /* Google Drive blue color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.drive-button:hover {
+  transform: scale(1.1);
+  background-color: #e8a035; /* Slightly darker blue on hover */
+}
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
   .EventCarousel {
@@ -87,4 +111,6 @@
     height: auto; /* Adjust height */
     font-size: 1.6rem;
   }
+
+  
 }

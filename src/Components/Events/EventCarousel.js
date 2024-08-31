@@ -7,6 +7,13 @@ const EventCarousel = () => {
   const [eventsData, setEventsData] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  const handleButtonClick = () => {
+    // Replace with your actual Google Drive link
+    const driveLink = 'https://drive.google.com/drive/folders/1C2FZ8NBhJl4EUQgGwX_n6BktVhb3mzBv';
+    window.open(driveLink, '_blank'); // Opens the link in a new tab
+  };
+
+
   useEffect(() => {
     // Fetch data from backend
     axios
@@ -48,6 +55,11 @@ const EventCarousel = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className='container2'>
+        <button onClick={handleButtonClick} className='drive-button'style={{ backgroundColor: '#FFAC1C' }} >
+          Snaps
+        </button>
       </div>
     </>
   );

@@ -13,6 +13,12 @@ const BlogmainPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleButtonClick = () => {
+    // Replace with your actual Google Drive link
+    const driveLink = 'https://drive.google.com/drive/folders/1C2FZ8NBhJl4EUQgGwX_n6BktVhb3mzBv';
+    window.open(driveLink, '_blank'); // Opens the link in a new tab
+  };
+
   useEffect(() => {
     // Fetch events from API using axios
     axios.get('/api/users/getBlogs') // Replace with your API endpoint
@@ -105,8 +111,14 @@ const BlogmainPage = () => {
               </button>
             </div>
           </div>
+
         ))}
       </Slider>
+      <div className='container2'>
+        <button onClick={handleButtonClick} className='drive-button'>
+          Snaps
+        </button>
+      </div>
     </div>
   );
 };

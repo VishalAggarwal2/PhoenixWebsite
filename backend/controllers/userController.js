@@ -131,6 +131,121 @@ const getAllEvents = async (req, res) => {
     await prisma.$disconnect();
   }
 };
+const getSubcribers = async (req, res) => {
+  try {
+    // Fetch subscribers from the database
+    const subscribers = await prisma.user.findMany(); // Assuming `user` model represents subscribers
+    res.status(200).json(subscribers);
+  } catch (error) {
+    console.error("Error fetching subscribers:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+// Controller to get join us data
+const getJoinUs = async (req, res) => {
+  try {
+    // Fetch join us data from the database
+    const joinUsData = await prisma.joinUs.findMany(); // Fetch all entries from the `joinUs` table
+    res.status(200).json(joinUsData);
+  } catch (error) {
+    console.error("Error fetching join us data:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+
+const deleteBlog = async (req, res) => {
+  const { id } = req.params;
+  
+  try {
+    // Find the blog by ID to ensure it exists
+    const blog = await prisma.blog.findUnique({
+      where: { id: parseInt(id, 10) },
+    });
+
+    if (!blog) {
+      return res.status(404).json({ message: 'Blog not found.' });
+    }
+
+    // Delete the blog
+    await prisma.blog.delete({
+      where: { id: parseInt(id, 10) },
+    });
+
+    res.status(200).json({ message: 'Blog deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting blog:', error);
+    res.status(500).json({ message: 'Internal server error.' });
+  }
+};
+
+const deleteEvent = async (req, res) => {
+  const { id } = req.params;
+  
+  try {
+    // Find the event by ID to ensure it exists
+    const event = await prisma.event_new.findUnique({
+      where: { id: parseInt(id, 10) },
+    });
+
+    if (!event) {
+      return res.status(404).json({ message: 'Event not found.' });
+    }
+
+    // Delete the event
+    await prisma.event_new.delete({
+      where: { id: parseInt(id, 10) },
+    });
+
+    res.status(200).json({ message: 'Event deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting event:', error);
+    res.status(500).json({ message: 'Internal server error.' });
+  }
+};
+
+
+
+const deleteJoinUs = async (req, res) => {
+  const { id } = req.params;
+  
+  try {
+    // Find the event by ID to ensure it exists
+    const joined = await prisma.joinUs.findUnique({
+      where: { id: parseInt(id, 10) },
+    });
+
+    if (!joined) {
+      return res.status(404).json({ message: 'Event not found.' });
+    }
+
+    // Delete the event
+    await prisma.joinUs.delete({
+      where: { id: parseInt(id, 10) },
+    });
+
+    res.status(200).json({ message: 'joined deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting joinus:', error);
+    res.status(500).json({ message: 'Internal server error.' });
+  }
+};
+
+const deleteSubscriber = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedSubscriber = await prisma.user.delete({
+      where: { id: parseInt(id) },
+    });
+
+    res.status(200).json({ message: 'Subscriber deleted successfully.', deletedSubscriber });
+  } catch (error) {
+    console.error('Error deleting subscriber:', error);
+    res.status(500).json({ message: 'An error occurred while deleting the subscriber.' });
+  }
+};
 
 module.exports = {
   createUser,
@@ -140,4 +255,10 @@ module.exports = {
   addBlog,
   getAllBlogs,
   getAllEvents,
+  getSubcribers,   // Ensure these are exported from the file
+  getJoinUs,
+  deleteBlog,
+  deleteEvent,
+  deleteJoinUs,
+  deleteSubscriber,
 };

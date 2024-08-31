@@ -9,6 +9,12 @@ const AdminDashboard = () => {
       <div style={styles.links}>
         <Link to="/addEvent" style={styles.link}>Add Event</Link>
         <Link to="/addBlog" style={styles.link}>Add Blog</Link>
+        <Link to="/getJoinUs" style={styles.link}>Join Us Data</Link>
+      </div>
+      <div style={styles.stats}>
+        <Link to="/subscribers" style={styles.statLink}>Subscribers</Link>
+        <Link to="/getEvents" style={styles.statLink}>Events</Link>
+        <Link to="/getBlogs" style={styles.statLink}>Blogs</Link>
       </div>
     </div>
   );
@@ -23,6 +29,7 @@ const styles = {
     height: '100vh',
     backgroundColor: '#f5f5f5',
     textAlign: 'center',
+    padding: '0 2rem',
   },
   header: {
     fontSize: '2.5rem',
@@ -36,8 +43,9 @@ const styles = {
   },
   links: {
     display: 'flex',
-    justifyContent: 'space-around',
-    width: '200px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
   },
   link: {
     textDecoration: 'none',
@@ -47,29 +55,22 @@ const styles = {
     border: '1px solid #007BFF',
     borderRadius: '5px',
     transition: 'background-color 0.3s, color 0.3s',
-    marginRight:'20px',
   },
-  linkHover: {
-    backgroundColor: '#007BFF',
-    color: '#fff',
-  },
-  page: {
+  stats: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#fff',
-    textAlign: 'center',
+    marginTop: '2rem',
+    gap: '1rem',
   },
-  pageHeader: {
-    fontSize: '2rem',
-    marginBottom: '1rem',
-    color: '#333',
-  },
-  pageDescription: {
-    fontSize: '1rem',
-    color: '#666',
+  statLink: {
+    textDecoration: 'none',
+    color: '#28A745',
+    fontSize: '1.2rem',
+    padding: '0.5rem 1rem',
+    border: '1px solid #28A745',
+    borderRadius: '5px',
+    transition: 'background-color 0.3s, color 0.3s',
   },
 };
 

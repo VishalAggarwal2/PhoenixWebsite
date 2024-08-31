@@ -20,6 +20,10 @@ import Infobotics from "./Components/Infobotics";
 import AdminDashboard from "./pages/AdminDashboard";
 import AddEvent from "./pages/AddEvent";
 import AddBlog from "./pages/AddBlog";
+import AllEvents from "../src/Components/AllEvents";
+import AllBlogs from "../src/Components/AllBlogs";
+import AllJoinUs from "../src/Components/AllJoinUs";
+import AllSubscribers from "../src/Components/AllSubscribers";
 
 
 function App() {
@@ -228,6 +232,70 @@ function App() {
                   }}
                 >
                   <AddBlog />
+                </div>
+              }
+            />
+            <Route
+              path="/getBlogs"
+              element={
+                <div
+                  onClick={DisableNav}
+                  style={{
+                    backgroundColor: "#ffffff", // White background
+                    backgroundSize: "cover", // Cover the entire area
+                    minHeight: "100vh", // Ensure it covers the full viewport height
+                    padding: "20px", // Optional padding around the AddEvent component
+                  }}
+                >
+                  <AllBlogs />
+                </div>
+              }
+            />
+            <Route
+              path="/getEvents"
+              element={
+                <div
+                  onClick={DisableNav}
+                  style={{
+                    backgroundColor: "#ffffff", // White background
+                    backgroundSize: "cover", // Cover the entire area
+                    minHeight: "100vh", // Ensure it covers the full viewport height
+                    padding: "20px", // Optional padding around the AddEvent component
+                  }}
+                >
+                  <AllEvents/>
+                </div>
+              }
+            />
+            <Route
+              path="/subscribers"
+              element={
+                <div
+                  onClick={DisableNav}
+                  style={{
+                    backgroundColor: "#ffffff", // White background
+                    backgroundSize: "cover", // Cover the entire area
+                    minHeight: "100vh", // Ensure it covers the full viewport height
+                    padding: "20px", // Optional padding around the AddEvent component
+                  }}
+                >
+                  <AllSubscribers/>
+                </div>
+              }
+            />
+            <Route
+              path="/getJoinUs"
+              element={
+                <div
+                  onClick={DisableNav}
+                  style={{
+                    backgroundColor: "#ffffff", // White background
+                    backgroundSize: "cover", // Cover the entire area
+                    minHeight: "100vh", // Ensure it covers the full viewport height
+                    padding: "20px", // Optional padding around the AddEvent component
+                  }}
+                >
+                  <AllJoinUs/>
                 </div>
               }
             />
