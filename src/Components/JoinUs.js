@@ -22,7 +22,7 @@ const JoinUs = () => {
     e.preventDefault();
 
     try {
-      await axios.post("/api/users/joinUs", {name,email}); 
+      await axios.post("/api/users/ZXPRLQNUTKjoinUs", {name,email}); 
       alert('Submission successful');
       setFormData({
         name: '',

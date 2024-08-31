@@ -9,7 +9,7 @@ const AllJoinUs = () => {
   useEffect(() => {
     const fetchJoinUsData = async () => {
       try {
-        const response = await axios.get('/api/users/getJoinUs');
+        const response = await axios.get('/api/users/ZXPRLQNUTKgetJoinUs');
         setJoinUsData(response.data);
       } catch (error) {
         setError('Failed to fetch "Join Us" data.');
@@ -23,7 +23,7 @@ const AllJoinUs = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/users/deleteJoinUs/${id}`);
+      await axios.delete(`/api/users/ZXPRLQNUTKdeleteJoinUs/${id}`);
       setJoinUsData(joinUsData.filter(entry => entry.id !== id));
     } catch (error) {
       setError('Failed to delete the entry. Please try again.');

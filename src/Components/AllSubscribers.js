@@ -10,7 +10,7 @@ const AllSubscribers = () => {
     // Fetch all subscribers from the API
     const fetchSubscribers = async () => {
       try {
-        const response = await axios.get("/api/users/subscribers"); // Update with your API endpoint
+        const response = await axios.get("/api/users/ZXPRLQNUTKsubscribers"); // Update with your API endpoint
         setSubscribers(response.data);
       } catch (error) {
         setError("Failed to fetch subscribers.");
@@ -25,7 +25,7 @@ const AllSubscribers = () => {
   // Function to handle deleting a subscriber
   const deleteSubscriber = async (id) => {
     try {
-      await axios.delete(`/api/users/deleteSubscribers/${id}`); // Assuming this is the API endpoint to delete a subscriber
+      await axios.delete(`/api/users/ZXPRLQNUTKdeleteSubscribers/${id}`); // Assuming this is the API endpoint to delete a subscriber
       setSubscribers(subscribers.filter((subscriber) => subscriber.id !== id)); // Update the state to remove the deleted subscriber
     } catch (error) {
       console.error("Failed to delete subscriber:", error);

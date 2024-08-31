@@ -7,14 +7,14 @@ const AdminDashboard = () => {
       <h1 style={styles.header}>Welcome to Our Website</h1>
       <p style={styles.description}>Join us today and explore amazing features!</p>
       <div style={styles.links}>
-        <Link to="/addEvent" style={styles.link}>Add Event</Link>
-        <Link to="/addBlog" style={styles.link}>Add Blog</Link>
-        <Link to="/getJoinUs" style={styles.link}>Join Us Data</Link>
+        <Link to="/ZXPRLQNUTKaddEvent" style={styles.link}>Add Event</Link>
+        <Link to="/ZXPRLQNUTKaddBlog" style={styles.link}>Add Blog</Link>
+        <Link to="/ZXPRLQNUTKgetJoinUs" style={styles.link}>Join Us Data</Link>
       </div>
       <div style={styles.stats}>
-        <Link to="/subscribers" style={styles.statLink}>Subscribers</Link>
-        <Link to="/getEvents" style={styles.statLink}>Events</Link>
-        <Link to="/getBlogs" style={styles.statLink}>Blogs</Link>
+        <Link to="/ZXPRLQNUTKsubscribers" style={styles.statLink}>Subscribers</Link>
+        <Link to="/ZXPRLQNUTKgetEvents" style={styles.statLink}>Events</Link>
+        <Link to="/ZXPRLQNUTKgetBlogs" style={styles.statLink}>Blogs</Link>
       </div>
     </div>
   );

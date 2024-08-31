@@ -21,7 +21,7 @@ const BlogmainPage = () => {
 
   useEffect(() => {
     // Fetch events from API using axios
-    axios.get('/api/users/getBlogs') // Replace with your API endpoint
+    axios.get('/api/users/ZXPRLQNUTKgetBlogs') // Replace with your API endpoint
       .then(response => {
         setEvents(response.data);
         setCurrentBlog(response.data[0]); // Set the first event as the current blog

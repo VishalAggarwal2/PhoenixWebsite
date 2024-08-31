@@ -17,7 +17,7 @@ const EventCarousel = () => {
   useEffect(() => {
     // Fetch data from backend
     axios
-      .get("/api/users/getEvents") // Ensure this endpoint returns the event data
+      .get("/api/users/ZXPRLQNUTKgetEvents") // Ensure this endpoint returns the event data
       .then((response) => {
         const events = response.data;
         setEventsData(events);

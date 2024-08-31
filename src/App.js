@@ -195,7 +195,7 @@ function App() {
               }
             />
             <Route
-              path="/adminDashboard"
+              path="/ZXPRLQNUTKadminDashboard"
               element={
                 <div onClick={DisableNav}>
                   <AdminDashboard />
@@ -203,7 +203,7 @@ function App() {
               }
             />
             <Route
-              path="/addEvent"
+              path="/ZXPRLQNUTKaddEvent"
               element={
                 <div
                   onClick={DisableNav}
@@ -220,7 +220,7 @@ function App() {
             />
 
             <Route
-              path="/addBLog"
+              path="/ZXPRLQNUTKaddBLog"
               element={
                 <div
                   onClick={DisableNav}
@@ -236,7 +236,7 @@ function App() {
               }
             />
             <Route
-              path="/getBlogs"
+              path="/ZXPRLQNUTKgetBlogs"
               element={
                 <div
                   onClick={DisableNav}
@@ -252,7 +252,7 @@ function App() {
               }
             />
             <Route
-              path="/getEvents"
+              path="/ZXPRLQNUTKgetEvents"
               element={
                 <div
                   onClick={DisableNav}
@@ -268,7 +268,7 @@ function App() {
               }
             />
             <Route
-              path="/subscribers"
+              path="/ZXPRLQNUTKsubscribers"
               element={
                 <div
                   onClick={DisableNav}
@@ -284,7 +284,7 @@ function App() {
               }
             />
             <Route
-              path="/getJoinUs"
+              path="/ZXPRLQNUTKgetJoinUs"
               element={
                 <div
                   onClick={DisableNav}

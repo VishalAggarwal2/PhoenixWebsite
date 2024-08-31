@@ -15,7 +15,7 @@ const AddBlog = () => {
 
         try {
             
-            const response = await axios.post('/api/users/addBlog',{blogName,blogInfo,images});
+            const response = await axios.post('/api/users/ZXPRLQNUTKaddBlog',{blogName,blogInfo,images});
             
             console.log('Blog added successfully:', response.data);
             //2Optionally reset form fields

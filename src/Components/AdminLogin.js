@@ -22,7 +22,7 @@ function AdminLogin() {
         );
 
         if (isValid) {
-            navigate('/adminDashboard');
+            navigate('/ZXPRLQNUTKadminDashboard');
         } else {
             console.log('Invalid credentials');
             alert('Invalid email or password');

@@ -15,7 +15,7 @@ const AddEvent = () => {
         
         try {
             
-            const response = await axios.post('/api/users/addEvent',{eventName,eventInfo,images});
+            const response = await axios.post('/api/users/ZXPRLQNUTKaddEvent',{eventName,eventInfo,images});
             
             console.log('Event added successfully:', response.data);
             //2Optionally reset form fields

@@ -10,7 +10,7 @@ const AllBlogs = () => {
     // Fetch all blogs from the API
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('/api/users/getBlogs'); // Update with your API endpoint
+        const response = await axios.get('/api/users/ZXPRLQNUTKgetBlogs'); // Update with your API endpoint
         setBlogs(response.data);
       } catch (error) {
         setError('Failed to fetch blogs.');
@@ -24,7 +24,7 @@ const AllBlogs = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/users/deleteBlog/${id}`); // Update with your API endpoint for deletion
+      await axios.delete(`/api/users/ZXPRLQNUTKdeleteBlog/${id}`); // Update with your API endpoint for deletion
       setBlogs(blogs.filter((blog) => blog.id !== id)); // Remove the deleted blog from the list
     } catch (error) {
       setError('Failed to delete the blog.');

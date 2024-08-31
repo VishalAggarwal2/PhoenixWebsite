@@ -10,7 +10,7 @@ const AllEvents = () => {
     // Fetch all events from the API
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('/api/users/getEvents'); // Update with your API endpoint
+        const response = await axios.get('/api/users/ZXPRLQNUTKgetEvents'); // Update with your API endpoint
         setEvents(response.data);
       } catch (error) {
         setError('Failed to fetch events.');
@@ -24,7 +24,7 @@ const AllEvents = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/users/deleteEvent/${id}`); // Update with your API endpoint for deletion
+      await axios.delete(`/api/users/ZXPRLQNUTKdeleteEvent/${id}`); // Update with your API endpoint for deletion
       setEvents(events.filter((event) => event.id !== id)); // Remove the deleted event from the list
     } catch (error) {
       setError('Failed to delete the event.');
