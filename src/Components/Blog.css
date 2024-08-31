@@ -1,5 +1,5 @@
 .container {
-    padding: 20px;
+    padding: 40px;
     background-color: #f0f2f5;
     font-family: Arial, sans-serif;
   }
@@ -76,13 +76,13 @@
   /* Carousel Card */
   .carouselCard {
     background-color: #ffffff;
-    padding: 10px;
+    padding: 0px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 25px;
+    border-radius: 20px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    height: 200px; /* Adjusted height */
+    height: 240px; /* Adjusted height */
     position: relative;
     margin: 0 10px; /* Increased margin for spacing */
     margin-bottom: 50px;
@@ -91,9 +91,10 @@
   /* Event Image */
   .eventImage {
     width: 100%;
-    height: 60%; /* Covering part of the card */
+    height: 70%; /* Covering part of the card */
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 0px;
+
     margin-bottom: 10px;
   }
   
@@ -172,7 +173,7 @@
     transform: scale(1.1);
   }
   .blogCard:hover{
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 
 
@@ -191,18 +192,18 @@
       height: 40vh; /* Adjust image height for mobile view */
     }
   
-    .carouselCard {
-      height: auto; /* Adjust card height for mobile view */
-      margin: 0 5px; /* Reduce spacing between cards */
+    /* .carouselCard {
+      height: auto; 
+      margin: 0 5px; 
     }
   
     .eventImage {
-      height: 50%; /* Adjust image height for mobile view */
+      height: 50%; 
     }
     
     .carouselTitle {
-      font-size: 18px; /* Adjust font size for mobile view */
-    }
+      font-size: 18px;
+    } */
   }
   
   /* Further adjustments for very small screens */

@@ -101,7 +101,7 @@ const BlogmainPage = () => {
                 className="moreInfoButton"
                 onClick={() => handleMoreInfoClick(event)}
               >
-                More Info
+                Explore
               </button>
             </div>
           </div>

@@ -1,51 +1,50 @@
-import Data from "./EventsData";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import SingleEvent from "./SingleEvent";
 import classes from "./Styles/EventCarousel.module.css";
-import axios from 'axios';
-import React, { useState, useEffect } from "react";
 
 const EventCarousel = () => {
-
   const [eventsData, setEventsData] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
     // Fetch data from backend
     axios
-      .get("/api/users/getBlogs")
+      .get("/api/users/getEvents") // Ensure this endpoint returns the event data
       .then((response) => {
-        // Assuming the backend returns the blog data as an array
-        setEventsData(response.data);
+        const events = response.data;
+        setEventsData(events);
+
+        // Set the second event as the default selected event
+        if (events.length > 1) {
+          setSelectedEvent(events[1]);
+        } else if (events.length === 1) {
+          setSelectedEvent(events[0]); // Fallback to the first event if only one event is available
+        }
       })
       .catch((error) => {
-        console.error("Error fetching blogs:", error);
+        console.error("Error fetching events:", error);
       });
   }, []);
 
-   
-  const [showMainEvent, setMainEvent] = useState(1);
-  const MainEventHandler = (id) => {
-    setMainEvent(id);
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+    window.scrollTo(0, 0); // Scroll to top when an event is selected
   };
-  const ScrollHandler = () => {
-    window.scrollTo(0, 0);
-  };
+
   return (
     <>
-      {showMainEvent && <SingleEvent id={showMainEvent} />}
+      {selectedEvent && <SingleEvent event={selectedEvent} />}
       <div className={classes.EventCarousel}>
         <div className={classes.Event_data}>
-          {Data.map((item) => (
+          {eventsData.map((event) => (
             <div
-              key={item.id}
-              onClick={() => {
-                MainEventHandler(item.id);
-                ScrollHandler();
-              }}
+              key={event.id}
+              onClick={() => handleEventClick(event)}
               className={classes.EventCard}
             >
-              <img src={item.poster} alt={item.title}></img>
-              <h3>{item.title}</h3>
-             
+              <img src={event.images} alt={event.title} />
+              <h3>{event.title}</h3>
             </div>
           ))}
         </div>
@@ -53,4 +52,5 @@ const EventCarousel = () => {
     </>
   );
 };
+
 export default EventCarousel;
