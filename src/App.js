@@ -24,12 +24,14 @@ import AllEvents from "../src/Components/AllEvents";
 import AllBlogs from "../src/Components/AllBlogs";
 import AllJoinUs from "../src/Components/AllJoinUs";
 import AllSubscribers from "../src/Components/AllSubscribers";
-
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
+
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
+    localStorage.setItem('isAuthenticated', false);
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -198,7 +200,9 @@ function App() {
               path="/ZXPRLQNUTKadminDashboard"
               element={
                 <div onClick={DisableNav}>
-                  <AdminDashboard />
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
                 </div>
               }
             />

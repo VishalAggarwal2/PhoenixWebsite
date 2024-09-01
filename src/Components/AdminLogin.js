@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Credentials = [
-    { email: process.env.REACT_APP_ADMIN_EMAIL_1, password: process.env.REACT_APP_ADMIN_PASSWORD_1 },
-    { email: process.env.REACT_APP_ADMIN_EMAIL_2, password: process.env.REACT_APP_ADMIN_PASSWORD_2 },
-    { email: process.env.REACT_APP_ADMIN_EMAIL_3, password: process.env.REACT_APP_ADMIN_PASSWORD_3 },
-    { email: process.env.REACT_APP_ADMIN_EMAIL_4, password: process.env.REACT_APP_ADMIN_PASSWORD_4 },
-
+    { email: process.env.REACT_APP_ADMIN_EMAIL_1, password: process.env.REACT_APP_ADMIN_PASSWORD_1 }
 ];
 
 function AdminLogin() {
+
+
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-
         const isValid = Credentials.some(
             (cred) => cred.email === email && cred.password === password
         );
 
         if (isValid) {
+            localStorage.setItem('isAuthenticated', true);
             navigate('/ZXPRLQNUTKadminDashboard');
         } else {
             console.log('Invalid credentials');
