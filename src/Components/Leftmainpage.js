@@ -1,6 +1,9 @@
 import React from 'react'
 import leftmainpage from './leftmainpage.module.css';
+import { useNavigate } from 'react-router-dom';
+
 export default function Leftmainpage(){
+  const navigate = useNavigate(); 
   function handleScroll1() {
     window.scroll({
       top: 500,
@@ -15,6 +18,11 @@ export default function Leftmainpage(){
       behavior: 'smooth',
     });
   }
+
+  function handleCollaborate(){
+    navigate('/joinUs');
+  }
+
 return (
 
  
@@ -29,7 +37,7 @@ return (
      </div>
      <div className={ leftmainpage.homepage_button}>
       <button className={ leftmainpage.homepage_button1}onClick = {handleScroll1}  >Know More</button>
-      <button className={ leftmainpage.homepage_button2} onClick = {handleScroll} >Collaborate</button>
+      <button className={ leftmainpage.homepage_button2} onClick = {handleCollaborate} >Collaborate</button>
      </div>
 </div>
 

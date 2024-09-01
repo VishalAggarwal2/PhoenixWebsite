@@ -9,16 +9,19 @@
 
 .coordinatorsHeading
 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 text-align: center;
-font-family: 'Montserrat';
+font-family: "Roboto",sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 2rem;
 line-height: 2.4375rem;
+text-shadow: 0px 0px 7px rgba(32, 84, 118, 0.634);
 
-text-transform: capitalize;
+text-transform: uppercase;
 
-color: #323232;
+color: #1d1d1d;
 
 opacity: 0.725;
 margin: auto;
@@ -62,16 +65,27 @@ max-width: 200px;
 max-height: 200px;
 overflow: hidden;
 object-fit: cover;
+transition: 0.7s ease ;
 
+}
+.images:hover  {
+    transform: scale(1.15);
+    filter: drop-shadow( 2px 2px 8px rgba(62, 70, 213, 0.586));
+    /* max-width: 220px;
+    max-height:220px ;
+    */
 }
 
 .mainimage{
     height: 150px;
     width: 150px;
     border-radius: 100%;
-    border: 9px solid white;
+    border: 7px solid white;
     object-fit: cover;
+    
+
 }
+
 .imageDiv 
 {
   position: relative;
@@ -87,10 +101,7 @@ object-fit: cover;
 
 @media screen and (max-width: 900px)
 {
-.container {
-    /* width: 100%; */
-    /* margin-bottom: 1.5em; */
-}
+
 .coordinatorsHeading
 {
     font-size: 1.5rem;

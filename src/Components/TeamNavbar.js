@@ -8,10 +8,10 @@ export default function Navbar(props) {
 
             <ul className={NavCss.navlist}>
                 <div className={NavCss.list} onClick={() => props.setY20true()}>
-                    <Link className={props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y20">Y-20</Link>
+                    <Link className={props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y20">Y-21</Link>
                 </div>
                 <div className={NavCss.list} onClick={() => props.setY20false()}>
-                    <Link className={!props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y19">Y-21</Link>
+                    <Link className={!props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y19">Y-22</Link>
                 </div>
 
             </ul>

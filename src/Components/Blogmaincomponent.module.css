@@ -1,3 +1,4 @@
+
 .maincontainer {
   width: 100%;
   display: flex;
@@ -7,17 +8,20 @@
   padding-top: 10px;
   height: 310px;
   border-radius: 10px;
-  filter: grayscale(0%);
+  /* filter: grayscale(0%);
   -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
+  -moz-filter: grayscale(0%); */
   margin-bottom: -20px;
-  object-fit: cover;
+  object-fit: cover; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .containerimage {
   width: 100%;
   border-radius: 6px;
   height: 200px;
   object-fit: cover;
+
 }
 
 .blogdate {
@@ -41,12 +45,14 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
 }
+
 .maincontainer:hover{
   cursor: pointer;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); */
   transform: scale(1.02);
+  box-shadow: 7px 17px 20px rgba(0, 0, 0, 0.3);
 }
 
 

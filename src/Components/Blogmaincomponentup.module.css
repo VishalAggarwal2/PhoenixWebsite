@@ -1,3 +1,4 @@
+
 .maincontainer {
   transition: all .4s;
   display: flex;
@@ -6,25 +7,42 @@
   padding-top: 10px;
   justify-content: center;
   gap :2%;
+  overflow: hidden; /* Ensure no content is shown outside the container during the animation */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-20px); /* Initially above the visible area */
+  transition: opacity 1s ease, transform 1s ease;
+  transition: transform 1s ease, box-shadow 1s ease;
 }
+
+.maincontainer:hover{
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.maincontainer.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to the normal position */
+}
+
 .containerimage:hover{
   transform: scale(1.02);
   cursor: pointer;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); */
 }
+
 .maincontainerright:hover{
   transform: scale(1.02);
   cursor: pointer;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); */
 }
+
 .maincontainerleft {
   width: 47%;
-  
 }
+
 .maincontainerright {
   display: flex;
   flex-direction: column;
@@ -33,7 +51,9 @@
  gap: 10px;
 
 }
+
 .containerimage {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   border-radius: 6px;
   height: 270px;

@@ -1,333 +1,174 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useLocation} from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Navcss from "../Navbar.module.css";
+import adminIcon from '../images/adminIcon2.png';
 
 export default function Navbar(props) {
   const [isActive, setActive] = useState(false);
-
   const [isCheck, setIsCheck] = useState(false);
 
-  const [isActive1, setActive1] = useState(true);
-  const [isActive2, setActive2] = useState(false);
-  const [isActive3, setActive3] = useState(false);
-  const [isActive4, setActive4] = useState(false);
-  const [isActive5, setActive5] = useState(false);
-  const [isActive6, setActive6] = useState(false);
-  const [isActive7, setActive7] = useState(false);
-  const [isActive8, setActive8] = useState(false);
-  const [isActive9, setActive9] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home");
 
   const [scroll, setScroll] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 10);
-    });
-  }, []);
-  const handleToggle = () => {
-    if(isActive){
-      setActive(!isActive);
-      setTimeout(()=>{setIsCheck(false)}, 100);
-      return;
-    }
-    else{
-      setIsCheck(true);
-      setTimeout(()=>{setActive(!isActive);}, 100);
-      
-      
-      return;
-    }
-    
-  };
-  const handleToggle1 = () => {
-
-    setActive(!isActive);
-    setActive1(true);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-    setActive8(false);
-  };
-  const handleToggle2 = () => {
-    setActive(!isActive);
-    setActive2(true);
-    setActive1(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-    setActive8(false);
-  };
-  const handleToggle3 = () => {
-    setActive(!isActive);
-    setActive3(true);
-    setActive1(false);
-    setActive2(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-    setActive8(false);
-  };
-  const handleToggle4 = () => {
-    setActive(!isActive);
-    setActive4(true);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-    setActive8(false);
-  };
-  const handleToggle5 = () => {
-    setActive(!isActive);
-    setActive5(true);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive8(false);
-    setActive6(false);
-    setActive7(false);
-  };
-  const handleToggle6 = () => {
-    setActive(!isActive);
-    setActive6(true);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive8(false);
-    setActive7(false);
-  };
-  const handleToggle7 = () => {
-    setActive(!isActive);
-    setActive7(true);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive8(false);
-  };
-
-  const handleToggle8 = () => {
-    setActive(!isActive);
-    setActive8(true);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-    setActive9(false);
-  };
-
-  const handleToggle9 = () => {
-    setActive(!isActive);
-    setActive9(true);
-    setActive8(false);
-    setActive1(false);
-    setActive2(false);
-    setActive3(false);
-    setActive4(false);
-    setActive5(false);
-    setActive6(false);
-    setActive7(false);
-  };
-
-
-  const gotoTop = ()=>{
-    window.scrollTo({top:0,left:0,behavior:"smooth"});
-  }
-
-  function handleScroll() {
-    handleToggle5();
-    window.scroll({
-      top: document.body.offsetHeight,
-      left: 0,
-      behavior: "smooth",
-    });
-  }
-
-
-  props.Test1(isActive);
-  props.Test2(handleToggle);
-  // if(props.Disable && isActive){
-  //   handleToggle();
-  // }
+  
   const location = useLocation();
-  if (location.pathname === "/recruitment" && !isActive3)
-    handleToggle3();
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    // Cleanup scroll event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+  useEffect(() => {
+    if (location.pathname === "/recruitment" && activeLink !== "Recruitment") {
+      setActiveLink("Recruitment");
+    } else if (location.pathname === "/joinUs") {
+      setActiveLink("Join Us");
+    } else {
+      setActiveLink("Home");
+    }
+  }, [location, activeLink]);
+
+  const handleToggle = () => {
+    setActive(prev => !prev);
+    setIsCheck(prev => !prev);
+  };
+
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName);
+    handleToggle();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Determine if the route is `/joinUs`
+  const isJoinUsRoute = location.pathname === "/joinUs";
+
   return (
-    <>
-      <nav className={scroll && Navcss.navbar}>
-        <ul className={Navcss.nav_list}>
-          <div className={Navcss.logo}>
-            <NavLink onClick={()=>{
-                  handleToggle1(); 
-                  // handleToggle();
-                  gotoTop();
-                }}
-                to="/">
-              <img
-                src="images/logo2.png"
-                className={Navcss.logo_image}
-                alt="img"
-              />
-            </NavLink>
-          </div>
+    <nav className={`${scroll ? Navcss.navbar : ''}`}>
+      <ul className={Navcss.nav_list}>
+        <div className={Navcss.logo}>
           
-          <div className={`${Navcss.rightnav} ${!isActive && Navcss.rightnav1} ${!isCheck && Navcss.barNotActive}`} >
-            <li>
-              <NavLink
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive1 && Navcss.clickactive
-                } `}
-                onClick={()=>{
-                  handleToggle1(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
 
-            <li>
-              <a 
-                className={`${Navcss.hover_underline_animation} ${
-                   Navcss.clickactive1
-                  } `}
-                onClick={()=>{
-                  handleToggle3(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                href="https://plinth.co.in/" target=" _blank"
-              >
-                <span className={`${Navcss.plinth}`}>Plinth'23</span>
-              </a>
-            </li>
-
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive2 && Navcss.clickactive
-                } `}
-                onClick={()=>{
-                  handleToggle2(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                to="/our_team_y20"
-              >
-                Our Team
-              </Link>
-            </li>
-            
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive4 && Navcss.clickactive
-                } `}
-                onClick={()=>{
-                  handleToggle4(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                to="/events"
-              >
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive5 && Navcss.clickactive
-                } `}
-                onClick={handleScroll}
-              >
-                Contacts
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive6 && Navcss.clickactive
-                } `}
-                onClick={()=>{
-                  handleToggle6(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                to="/credits"
-              >
-                Credits
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive7 && Navcss.clickactive
-                } `}
-                to="/blogs"
-                onClick={()=>{
-                  handleToggle7(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-              >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive7 && Navcss.clickactive
-                } `}
-                to="/infobotics"
-                onClick={()=>{
-                  handleToggle9(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-              >
-                Infobotics
-              </Link>
-            </li>
-            <li>
-              <a
-                className={`${Navcss.hover_underline_animation} ${
-                  isActive8 && Navcss.clickactive
-                } `}
-                onClick={()=>{
-                  handleToggle8(); 
-                  handleToggle();
-                  gotoTop();
-                }}
-                href="https://noteforms.com/forms/phoenix-drone-workshop-xk4tjo"
-                target="_blank"
-              >
-                Registration
-              </a>
-            </li>
-          </div>
-        </ul>
-        <div className={Navcss.burger} onClick={handleToggle}>
-          <div className={Navcss.line}></div>
-          <div className={Navcss.line}></div>
-          <div className={Navcss.line}></div>
+          <NavLink
+            onClick={() => handleLinkClick("Home")}
+            to="/"
+          >
+            <img
+              src="images/logo2.png"
+              className={Navcss.logo_image}
+              alt="Logo"
+            />
+          </NavLink>
         </div>
-      </nav>
-    </>
+
+        <div className={`${Navcss.rightnav} ${!isActive ? Navcss.rightnav1 : ''} ${!isCheck ? Navcss.barNotActive : ''}`}>
+          <li>
+            <NavLink
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Home" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Home")}
+              to="/"
+              style={{ color: isJoinUsRoute && activeLink === "Home" ? 'white' : '' }}
+            >
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Our Team" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Our Team")}
+              to="/our_team_y20"
+              style={{ color: isJoinUsRoute && activeLink === "Our Team" ? 'white' : '' }}
+            >
+              Our Team
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Events" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Events")}
+              to="/events"
+              style={{ color: isJoinUsRoute && activeLink === "Events" ? 'white' : '' }}
+            >
+              Events
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Credits" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Credits")}
+              to="/credits"
+              style={{ color: isJoinUsRoute && activeLink === "Credits" ? 'white' : '' }}
+            >
+              Credits
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Blogs" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Blogs")}
+              to="/blogs"
+              style={{ color: isJoinUsRoute && activeLink === "Blogs" ? 'white' : '' }}
+            >
+              Blogs
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Infobotics" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Infobotics")}
+              to="/infobotics"
+              style={{ color: isJoinUsRoute && activeLink === "Infobotics" ? 'white' : '' }}
+            >
+              Infobotics
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Join Us" ? Navcss.clickactive : ''}`}
+              onClick={() => handleLinkClick("Join Us")}
+              to="/joinUs"
+              style={{ color: isJoinUsRoute ? 'white' : '' }}
+            >
+              Join Us
+            </Link>
+          </li>
+          <li>
+          <Link
+              className={`${Navcss.hover_underline_animation} ${activeLink === "Admin" ? Navcss.clickactive : ''}`}
+              to="/admin"
+              onClick={() => handleLinkClick("Admin")}
+            >
+              <img
+                src={adminIcon}
+                alt="Admin"
+                width="45"
+                height="45"
+                style={{
+                  borderRadius: "50%", // Makes the image round
+                  boxShadow: "2px 2px 6px rgba(0, 0, 0, 0.15)" // Applies the shadow
+                }}
+              />
+            </Link>
+          </li>
+        </div>
+      </ul>
+
+      <div className={Navcss.burger} onClick={handleToggle}>
+        <div className={Navcss.line}></div>
+        <div className={Navcss.line}></div>
+        <div className={Navcss.line}></div>
+      </div>
+    </nav>
   );
 }

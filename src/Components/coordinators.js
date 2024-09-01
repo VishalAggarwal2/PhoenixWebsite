@@ -15,7 +15,7 @@ function Coordinator(props) {
 
                         </div>
                         <Details
-                            //  name={coordinators.coordinator[0].name
+                           
                             name={props.name1}
                             link1={props.link1}
                             link2={props.link2}
@@ -35,9 +35,39 @@ function Coordinator(props) {
                             link1={props.link4}
                             link2={props.link5}
                             link3={props.link6}
-                        //  name={coordinators.coordinator[1].name}
+                      
                         />
 
+                    </div>
+                </div>
+                <div className={CoordiCss.container}>
+                    <div className={CoordiCss.imageDiv}>
+                        <div className={CoordiCss.images}>
+                            <img className={CoordiCss.mainimage} src={`/images/${props.img3}`} alt="coordinator1" />
+
+                        </div>
+                        <Details
+                          
+                            name={props.name3}
+                            link1={props.link7}
+                            link2={props.link8}
+                            link3={props.link9}
+                        />
+                    </div>
+                </div>
+                <div className={CoordiCss.container}>
+                    <div className={CoordiCss.imageDiv}>
+                        <div className={CoordiCss.images}>
+                            <img className={CoordiCss.mainimage} src={`/images/${props.img4}`} alt="coordinator1" />
+
+                        </div>
+                        <Details
+                       
+                            name={props.name4}
+                            link1={props.link10}
+                            link2={props.link11}
+                            link3={props.link12}
+                        />
                     </div>
                 </div>
                 

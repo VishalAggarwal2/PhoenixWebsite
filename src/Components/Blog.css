@@ -1,0 +1,249 @@
+.container {
+    padding: 40px;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Blog Card */
+  .blogCard {
+    margin-top: 50px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: 70vh; /* Covering half of the viewport height */
+    display: flex;
+    overflow: hidden;
+  }
+  
+  /* Blog Image Container */
+  .blogImageContainer {
+    flex: 1;
+    background-color: #f4f4f4;
+  }
+  
+  /* Blog Image */
+  .blogImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Blog Content */
+  .blogContent {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Blog Title */
+  .blogTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Blog Description */
+  .blogDescription {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Blog Date */
+  .blogDate {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  /* Carousel Title */
+  .carouselTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Carousel Card Wrapper */
+  .carouselCardWrapper {
+    padding: 0 5px; /* Reduced spacing between cards */
+  }
+  
+  /* Carousel Card */
+  .carouselCard {
+    background-color: #ffffff;
+    padding: 0px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    height: 240px; /* Adjusted height */
+    position: relative;
+    margin: 0 10px; /* Increased margin for spacing */
+    margin-bottom: 50px;
+  }
+  
+  /* Event Image */
+  .eventImage {
+    width: 100%;
+    height: 70%; /* Covering part of the card */
+    object-fit: cover;
+    border-radius: 20px 0px 0px 0px;
+
+    margin-bottom: 10px;
+  }
+  
+  /* Event Title */
+  .eventTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Event Description */
+  .eventDescription {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+  }
+  
+  /* Event Date */
+  .eventDate {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  /* More Info Button */
+  .moreInfoButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+  }
+  
+  .slick-arrow {
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 10px;
+  }
+  
+  .slick-arrow:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Carousel Card Hover Effect */
+  .carouselCard:hover {
+    transform: scale(1.1);
+  }
+  .blogCard:hover{
+    transform: scale(1.05);
+  }
+
+
+  .moreInfoButton:focus {
+    outline: 2px solid #0056b3;
+  }
+
+  .container2 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 10vh;          /* Full viewport height */
+  }
+  
+  .drive-button {
+    padding: 10px 20px;
+    background-color: #156bf4; /* Google Drive blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .drive-button:hover {
+    transform: scale(1.1);
+    background-color: #357ae8; /* Slightly darker blue on hover */
+  }
+  /* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+    .blogCard {
+      flex-direction: column;
+      height: auto; /* Adjust height for mobile view */
+    }
+  
+    .blogImage {
+      height: 40vh; /* Adjust image height for mobile view */
+    }
+  
+    /* .carouselCard {
+      height: auto; 
+      margin: 0 5px; 
+    }
+  
+    .eventImage {
+      height: 50%; 
+    }
+    
+    .carouselTitle {
+      font-size: 18px;
+    } */
+  }
+  
+  /* Further adjustments for very small screens */
+  @media (max-width: 480px) {
+    .blogTitle {
+      font-size: 20px; /* Adjust font size for mobile view */
+    }
+  
+    .blogDescription {
+      font-size: 14px; /* Adjust font size for mobile view */
+    }
+  
+    .eventTitle {
+      font-size: 12px; /* Adjust font size for mobile view */
+    }
+  
+    .eventDescription {
+      font-size: 10px; /* Adjust font size for mobile view */
+    }
+  }

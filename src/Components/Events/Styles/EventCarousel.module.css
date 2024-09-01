@@ -1,83 +1,116 @@
-.EventCarousel img {
-  width: 100%;
-  margin: 10px 0px;
-}
+/* Styles for Event Carousel */
 .EventCarousel {
   overflow: hidden;
   cursor: pointer;
   display: flex;
+  flex-direction: column; /* Vertical alignment for the container */
   text-align: center;
-  height: 25rem;
   margin: 10px;
-  /* border: 2px solid red; */
-  margin-top: 5rem;
+  margin-top: 40px;
+  height: 20rem; /* Fixed height for consistency */
+  position: relative; /* Relative positioning for container */
 }
+
 .Event_data {
-  width: 100%;
-  display: flex;
-  margin: 0rem 2rem;
-  overflow-x: scroll;
+  display: flex; /* Flexbox for horizontal scrolling */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  padding: 0 1rem; /* Padding to add space on sides */
+  box-sizing: border-box; /* Include padding in width calculations */
+  align-items: center; /* Center items vertically */
 }
+
 .Event_data::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hide scrollbar */
 }
+
 .EventCard {
-  margin: 0.4rem;
-  /* border: 3px solid rgb(0, 0, 0); */
-  margin-top: 1rem;
+  flex: 0 0 200px; /* Fixed width for cards, do not grow or shrink */
+  margin: 0 0.4rem; /* Margin between cards */
   border-radius: 1.1rem;
   padding: 0.5rem;
   font-size: 1.4rem;
-  width: 100%;
-  height: 17rem;
+  height: 13rem;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  box-shadow: 5px 8px 15px rgb(194, 189, 189);
-  display: flex;
+  box-shadow: 5px 8px 15px rgba(194, 189, 189, 0.8);
   color: #fdb617;
-  flex-direction: column;
-  align-items: center;
-  font-family: montserrat;
-}
-.EventCard:hover {
-  filter: grayscale(00%);
-  -webkit-filter: grayscale(00%);
-  width: 150%;
-  height: 20rem;
-  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer; /* Pointer cursor for clickable cards */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  margin-bottom: 20px;
 }
 
+.EventCard:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  filter: grayscale(0%);
+}
+
+.EventCard img {
+  width: 100%; /* Ensure image fills the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 1.1rem; /* Match card radius */
+}
+
+.EventCard h3 {
+  font-size: 1.4rem; /* Consistent font size */
+  margin: 10px 0; /* Margin for spacing */
+  transition: font-size 0.3s ease, padding-top 0.3s ease;
+}
+
+.EventCard:hover h3 {
+  font-size: 1.7rem; /* Increase title size on hover */
+  padding-top: 15px; /* Add space above title */
+}
+
+.container2 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  height: 0vh;          /* Full viewport height */
+}
+
+.drive-button {
+  padding: 0px 20px;
+  background-color: #f47915; /* Google Drive blue color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.drive-button:hover {
+  transform: scale(1.1);
+  background-color: #e8a035; /* Slightly darker blue on hover */
+}
+
+/* Media Queries */
 @media only screen and (max-width: 768px) {
   .EventCarousel {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: max-content;
+    height: auto; /* Adjust height for content */
     width: 100%;
   }
   .Event_data {
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
+    padding: 0 1rem; /* Padding adjustment for smaller screens */
+    max-width: 100%; /* Ensure full width */
   }
   .EventCard {
-    filter: grayscale(00%);
-    -webkit-filter: grayscale(00%);
-  }
-  .EventCard {
-    width: 70%;
-    height:max-content;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    flex: 0 0 70%; /* Adjust card width for smaller screens */
+    margin: 1rem; /* Adjust margin */
   }
   .EventCard:hover {
-    filter: grayscale(00%);
-    -webkit-filter: grayscale(00%);
-    width: 70%;
-    height: 45%;
+    flex: 0 0 74%; /* Increase width on hover */
+    height: auto; /* Adjust height */
     font-size: 1.6rem;
   }
+
+  
 }

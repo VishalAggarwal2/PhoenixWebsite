@@ -10,7 +10,8 @@
 
 .mainImage 
 {
-    width: 55%;
+    width: 750px;
+    height: 400px;
     /* min-width:325px ; */
     /* background-color: grey; */
     margin: auto;
@@ -21,17 +22,16 @@
 .mainImage1 
 {
     width: 100%;
- 
+    box-shadow: 0 0 10px rgba(33, 33, 33, 0.567);
     height: -webkit-fill-available;
     border-radius: 10px;
+    transition: 0.8s ease;
 }
 
 .mainImage1:hover {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    /* transform: scale(1.02); */
-    box-shadow: 0 0 11px rgba(33, 33, 33, 0.3);
+   
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(33, 33, 33, 0.838);
 }
 
 .hr 
