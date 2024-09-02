@@ -12,13 +12,13 @@ model user {
   email   String   @unique
   // Remove any reference to Image if not needed
 }
-
 model joinUs {
-  id      Int      @id @default(autoincrement())
+  id      Int    @id @default(autoincrement())
   name    String
-  email   String   @unique
+  email   String @unique
+  phone   String // Added phone field
 
-  @@map("joinus") 
+  @@map("joinus")
 }
 
 model event_new {

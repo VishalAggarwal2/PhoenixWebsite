@@ -5,10 +5,11 @@ const JoinUs = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '', // Added phone field to state
     message: '',
   });
 
-  const { name, email} = formData;
+  const { name, email, phone } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,11 +23,12 @@ const JoinUs = () => {
     e.preventDefault();
 
     try {
-      await axios.post("/api/users/ZXPRLQNUTKjoinUs", {name,email}); 
+      await axios.post("/api/users/joinUs", { name, email, phone }); // Included phone in the submission
       alert('Submission successful');
       setFormData({
         name: '',
         email: '',
+        phone: '', // Reset phone field
         message: '',
       });
     } catch (error) {
@@ -57,14 +59,23 @@ const JoinUs = () => {
           onChange={handleChange}
           required
         />
-        { <textarea
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          style={{ width: '95%', padding: '10px', margin: '10px 0', border: '1px solid #ddd', borderRadius: '4px' }}
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+        <textarea
           name="message"
           placeholder="Why do you want to join us?"
           style={{ width: '95%', padding: '10px', margin: '10px 0', border: '1px solid #ddd', borderRadius: '4px', height: '100px' }}
           value={formData.message}
           onChange={handleChange}
           required
-        /> }
+        />
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#fa8241', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '1rem' }}>Submit</button>
       </form>
     </div>

@@ -4,6 +4,7 @@ import TeamCss from "./teams.module.css";
 import TeamNavbar from "../Components/TeamNavbar";
 import Coordinator from "../Components/coordinators";
 import y21 from '../images/y21 team.jpg'
+
 const y20Data = {
   coordinators: [
     {

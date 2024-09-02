@@ -21,7 +21,7 @@ const Footer = () => {
 
     try {
       const requestData = { email };
-      await axios.post("/api/users/create", requestData);
+      await axios.post("/api/users/ZXPRLQNUTKcreate", requestData);
       setEmail(''); 
       alert('Thank you for subscribing to our newsletter! We are thrilled to have you as part of our community. Expect to receive regular updates, exclusive content, and the latest news straight to your inbox');
     } catch (err) {

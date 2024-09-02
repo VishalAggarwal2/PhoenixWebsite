@@ -24,9 +24,9 @@ import AllBlogs from "../src/Components/AllBlogs";
 import AllJoinUs from "../src/Components/AllJoinUs";
 import AllSubscribers from "../src/Components/AllSubscribers";
 import ProtectedRoute from "./Components/ProtectedRoute";
-
+import axios from "axios";
 function App() {
-
+  axios.defaults.baseURL = 'http://localhost:3001';
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
