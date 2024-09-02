@@ -9,7 +9,6 @@ import TeamsY20 from "./pages/TeamsY20";
 import TeamsY19 from "./pages/TeamsY19";
 import Credits from "./pages/CreditsPage";
 import Events from "../src/Components/Events/Events";
-import SingleBlog from "./Components/SingleBlog";
 import { Triangle } from "react-loader-spinner";
 import JoinUs from "./Components/JoinUs";
 import AdminLogin from "./Components/AdminLogin";
@@ -106,14 +105,6 @@ function App() {
               element={
                 <div onClick={DisableNav}>
                   <Blogmain />
-                </div>
-              }
-            />
-            <Route
-              path="/blogs/:blogID"
-              element={
-                <div onClick={DisableNav}>
-                  <SingleBlog />
                 </div>
               }
             />

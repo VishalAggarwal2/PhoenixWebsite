@@ -6,7 +6,7 @@ function QuarksDivisonHead(props)
 {
     return (
         <div>
-             <h1 className={CoordiCss.coordinatorsHeading}>Quarks Division Heads</h1>
+             <h1 className={CoordiCss.coordinatorsHeading}>{props.title}</h1>
             <div className={CoordiCss.coordinators}>
             <div className={CoordiCss.imageDiv}>
                     <div className={CoordiCss.images}>

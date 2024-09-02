@@ -6,6 +6,7 @@ import Coordinator from "../Components/y19coordinators";
 import HardwareDivisonHead from "../Components/y19HardwareDivisonHead";
 import SoftwareDivisonHead from "../Components/y19SoftwareDomainHead";
 import QuarksDivisonHead from "../Components/y19QuarksDivisonHead";
+// import coreTeam from "../Components/y19coreTeamMembers";
 import y22 from '../images/y22 team.jpg'
 
 
@@ -95,7 +96,53 @@ const y19Data={
       link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucs138@lnmiit.ac.in",
     },
 
-  ]
+  ],
+  coreTeam:[
+    {
+      name: "Shashwat Anand",
+      img: "core4.jpg",
+      link1: "https://www.linkedin.com/in/shashwat-anand-6b787421a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/shashwat_._anand?igsh=MXg0NmxpeHk4YTJjZA==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucs193@lnmiit.ac.in",
+      
+    },
+    {
+      name: "Ekagra Shandilya",
+      img: "core2.jpg",
+      link1: "https://www.linkedin.com/in/ekagra-shandilya-3944a0256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/shandilya_ekagra?igsh=MTFyeDdkcmp3ZzA0MQ==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22uec043@lnmiit.ac.in",
+    },
+    {
+      name: "Yogya Asnani",
+      img: "core3.jpg",
+      link1: "",
+      link2: "https://www.instagram.com/yogya243?igsh=MXVoOTExZG1xNXd3Ng==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucc122@lnmiit.ac.in",
+    },
+    {
+      name: "Keshav Laddha",
+      img: "core5.jpg",
+      link1: "https://www.linkedin.com/in/keshav-laddha-523473322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/__keshav57?igsh=b3c5YmRiYW5wMGJw",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22uec061@lnmiit.ac.in",
+    },
+    {
+      name: "Shikhar Mathur",
+      img: "core1.jpg",
+      link1: "https://www.linkedin.com/in/shikhar-mathur-725b21267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/shikhar_1304?igsh=MXdlcXp5eHF4Y3Ztaw==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22ucs197@lnmiit.ac.in",
+     
+    },
+    {
+      name: "Shashwat Agrawal",
+      img: "core6.jpg",
+      link1: "https://www.linkedin.com/in/shashwat-agarwal-a817bb316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link2: "https://www.instagram.com/shashwatagarwal9?igsh=MWt1OWhmd2QzM2dreg==",
+      link3: "https://mail.google.com/mail/?view=cm&fs=1&to=22uec123@lnmiit.ac.in",
+    },
+  ],
 }
 
   
@@ -154,6 +201,7 @@ function Teams(props)
             link9={y19Data.marketing[2].link3}
             />
             <QuarksDivisonHead 
+            title ="Quark Division Head"
             name1={y19Data.quarks[0].name}
             name2={y19Data.quarks[1].name}
             name3={y19Data.quarks[2].name}
@@ -170,6 +218,50 @@ function Teams(props)
             link8={y19Data.quarks[2].link2}
             link9={y19Data.quarks[2].link3}
             />
+
+<QuarksDivisonHead 
+            title="Core Team Members"
+            name1={y19Data.coreTeam[0].name}
+          img1={y19Data.coreTeam[0].img}
+          link1={y19Data.coreTeam[0].link1}
+          link2={y19Data.coreTeam[0].link2}
+          link3={y19Data.coreTeam[0].link3}
+
+          name2={y19Data.coreTeam[1].name}
+          img2={y19Data.coreTeam[1].img}
+          link4={y19Data.coreTeam[1].link1}
+          link5={y19Data.coreTeam[1].link2}
+          link6={y19Data.coreTeam[1].link3}
+
+          name3={y19Data.coreTeam[2].name}
+          img3={y19Data.coreTeam[2].img}
+          link7={y19Data.coreTeam[2].link1}
+          link8={y19Data.coreTeam[2].link2}
+          link9={y19Data.coreTeam[2].link3}
+            />
+
+<QuarksDivisonHead 
+            // title =""
+            name1={y19Data.coreTeam[3].name}
+            img1={y19Data.coreTeam[3].img}
+            link1={y19Data.coreTeam[3].link1}
+            link2={y19Data.coreTeam[3].link2}
+            link3={y19Data.coreTeam[3].link3}
+  
+            name2={y19Data.coreTeam[4].name}
+            img2={y19Data.coreTeam[4].img}
+            link4={y19Data.coreTeam[4].link1}
+            link5={y19Data.coreTeam[4].link2}
+            link6={y19Data.coreTeam[4].link3}
+  
+            name3={y19Data.coreTeam[5].name}
+            img3={y19Data.coreTeam[5].img}
+            link7={y19Data.coreTeam[5].link1}
+            link8={y19Data.coreTeam[5].link2}
+            link9={y19Data.coreTeam[5].link3}
+            />
+
+           
 
     </div>
     );
