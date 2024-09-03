@@ -62,13 +62,13 @@ function App() {
 
   // .......................
 
-  let [isY20, setisY20] = useState(true);
+  let [isY22, setisY22] = useState(true);
 
-  const setY20false = () => {
-    setisY20(false);
+  const setY22false = () => {
+    setisY22(false);
   };
-  const setY20true = () => {
-    setisY20(true);
+  const setY22true = () => {
+    setisY22(true);
   };
 
   return (
@@ -109,13 +109,13 @@ function App() {
               }
             />
             <Route
-              path="/our_team_y20"
+              path="/our_team_Y20"
               element={
                 <div onClick={DisableNav}>
                   <TeamsY20
-                    isY20={isY20}
-                    setY20false={setY20false}
-                    setY20true={setY20true}
+                    isY22={isY22}
+                    setY22false={setY22false}
+                    setY22true={setY22true}
                   />
                 </div>
               }
@@ -125,9 +125,9 @@ function App() {
               element={
                 <div onClick={DisableNav}>
                   <TeamsY19
-                    isY20={isY20}
-                    setY20false={setY20false}
-                    setY20true={setY20true}
+                    isY22={isY22}
+                    setY22false={setY22false}
+                    setY22true={setY22true}
                   />
                 </div>
               }
