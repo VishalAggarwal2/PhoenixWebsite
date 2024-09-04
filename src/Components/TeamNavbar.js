@@ -7,11 +7,11 @@ export default function Navbar(props) {
         <div className={NavCss.main}>
 
             <ul className={NavCss.navlist}>
-                <div className={NavCss.list} onClick={() => props.setY20true()}>
-                    <Link className={props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y20">Y-21</Link>
+                <div className={NavCss.list} onClick={() => props.setY22true()}>
+                    <Link className={props.isY22 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y20">Y-22</Link>
                 </div>
-                <div className={NavCss.list} onClick={() => props.setY20false()}>
-                    <Link className={!props.isY20 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y19">Y-22</Link>
+                <div className={NavCss.list} onClick={() => props.setY22false()}>
+                    <Link className={!props.isY22 ? NavCss.navitem + " " + NavCss.bold : NavCss.navitem} to="/our_team_y19">Y-21</Link>
                 </div>
 
             </ul>

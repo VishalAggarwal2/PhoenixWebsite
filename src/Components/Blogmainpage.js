@@ -7,6 +7,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import axios from 'axios';
 
 const BlogmainPage = () => {
+  
   // State to hold the events data, current blog, loading state, and error state
   const [events, setEvents] = useState([]);
   const [currentBlog, setCurrentBlog] = useState(null);

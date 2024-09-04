@@ -39,7 +39,7 @@ const getUser = async (req, res) => {
 };
 
 const joinUs = async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email,phone } = req.body;
 
   try {
     
@@ -47,6 +47,7 @@ const joinUs = async (req, res) => {
       data: {
         name,
         email,
+        phone,
       },
     });
   
