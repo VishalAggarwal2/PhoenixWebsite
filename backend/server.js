@@ -5,7 +5,7 @@ const cors = require('cors');
 // Middleware to parse JSON bodies
 app.use(express.json());
 const corsOptions = {
-  origin: 'https://new-frontend-peach.vercel.app', // Replace with your frontend's URL
+  origin: 'https://third-frontend.vercel.app', // Replace with your frontend's URL
   methods: 'GET,POST,PUT,DELETE',  // Allowed HTTP methods
   allowedHeaders: 'Content-Type,Authorization', // Allowed headers
   credentials: true                // Allow credentials (cookies, etc.)
