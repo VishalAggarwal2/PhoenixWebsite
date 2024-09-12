@@ -1,11 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-
-
 const createUser = async (req, res) => {
   try {
-    const {email} = req.body;
+    const { email } = req.body;
     const newUser = await prisma.user.create({
       data: {
         email
@@ -19,12 +17,11 @@ const createUser = async (req, res) => {
   }
 };
 
-
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await prisma.user.findUnique({
-      where: { id: parseInt(id) },
+      where: { id }, // For MongoDB, 'id' is a string (ObjectId), so no need to parse it to an integer
     });
     if (user) {
       res.json(user);
@@ -39,10 +36,9 @@ const getUser = async (req, res) => {
 };
 
 const joinUs = async (req, res) => {
-  const { name, email,phone } = req.body;
+  const { name, email, phone } = req.body;
 
   try {
-    
     const newUser = await prisma.joinUs.create({
       data: {
         name,
@@ -50,67 +46,62 @@ const joinUs = async (req, res) => {
         phone,
       },
     });
-  
+
     res.status(201).json(newUser);
   } catch (error) {
     console.error('Error creating user:', error);
     res.status(500).json({ message: 'Error creating user.' });
   }
-}
+};
 
-const addEvent = async (req, res) =>{
-  console.log("Hello")
-  const { eventName, eventInfo,images } = req.body;
+const addEvent = async (req, res) => {
+  const { eventName, eventInfo, images } = req.body;
 
   if (!eventName || !eventInfo) {
-      return res.status(400).json({ error: 'Event name and event info are required.' });
+    return res.status(400).json({ error: 'Event name and event info are required.' });
   }
 
   try {
-      const eventSample = await prisma.event_new.create({
-          data: {
-              title: eventName,
-              description: eventInfo,
-              images:images,
-          },
-      });
-      console.log("Hello world")
-      res.status(201).json(eventSample);
+    const eventSample = await prisma.event_new.create({
+      data: {
+        title: eventName,
+        description: eventInfo,
+        images: images,
+      },
+    });
+    res.status(201).json(eventSample);
   } catch (error) {
-      console.error('Error creating Event:', error);
-      res.status(500).json({ error: 'Internal server error' });
+    console.error('Error creating Event:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
+};
 
-
-}
-
-const addBlog = async (req, res) =>{
-  
-  const { blogName, blogInfo,images } = req.body;
+const addBlog = async (req, res) => {
+  const { blogName, blogInfo, images } = req.body;
 
   if (!blogName || !blogInfo) {
-      return res.status(400).json({ error: 'Event name and event info are required.' });
+    return res.status(400).json({ error: 'Blog name and blog info are required.' });
   }
 
   try {
-      const newBlog = await prisma.blog.create({
-          data: {
-              title: blogName,
-              description: blogInfo,
-              images:images,
-          },
-      });
+    const newBlog = await prisma.blog.create({
+      data: {
+        title: blogName,
+        description: blogInfo,
+        images: images,
+      },
+    });
 
-      res.status(201).json(newBlog);
+    res.status(201).json(newBlog);
   } catch (error) {
-      console.error('Error creating blog:', error);
-      res.status(500).json({ error: 'Internal server error' });
+    console.error('Error creating blog:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
-}
+};
 
 const getAllBlogs = async (req, res) => {
   try {
-    const blogs = await prisma.blog.findMany(); // Fetch all blogs from the blog table
+    const blogs = await prisma.blog.findMany();
     res.json(blogs);
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -120,10 +111,9 @@ const getAllBlogs = async (req, res) => {
   }
 };
 
-
 const getAllEvents = async (req, res) => {
   try {
-    const events = await prisma.event_new.findMany(); // Fetch all blogs from the blog table
+    const events = await prisma.event_new.findMany();
     res.json(events);
   } catch (error) {
     console.error('Error fetching events:', error);
@@ -132,10 +122,10 @@ const getAllEvents = async (req, res) => {
     await prisma.$disconnect();
   }
 };
-const getSubcribers = async (req, res) => {
+
+const getSubscribers = async (req, res) => {
   try {
-    // Fetch subscribers from the database
-    const subscribers = await prisma.user.findMany(); // Assuming `user` model represents subscribers
+    const subscribers = await prisma.user.findMany();
     res.status(200).json(subscribers);
   } catch (error) {
     console.error("Error fetching subscribers:", error);
@@ -143,11 +133,9 @@ const getSubcribers = async (req, res) => {
   }
 };
 
-// Controller to get join us data
 const getJoinUs = async (req, res) => {
   try {
-    // Fetch join us data from the database
-    const joinUsData = await prisma.joinUs.findMany(); // Fetch all entries from the `joinUs` table
+    const joinUsData = await prisma.joinUs.findMany();
     res.status(200).json(joinUsData);
   } catch (error) {
     console.error("Error fetching join us data:", error);
@@ -155,23 +143,20 @@ const getJoinUs = async (req, res) => {
   }
 };
 
-
 const deleteBlog = async (req, res) => {
   const { id } = req.params;
-  
+
   try {
-    // Find the blog by ID to ensure it exists
     const blog = await prisma.blog.findUnique({
-      where: { id: parseInt(id, 10) },
+      where: { id }, // No need to parse `id` as it's a string
     });
 
     if (!blog) {
       return res.status(404).json({ message: 'Blog not found.' });
     }
 
-    // Delete the blog
     await prisma.blog.delete({
-      where: { id: parseInt(id, 10) },
+      where: { id },
     });
 
     res.status(200).json({ message: 'Blog deleted successfully.' });
@@ -183,20 +168,18 @@ const deleteBlog = async (req, res) => {
 
 const deleteEvent = async (req, res) => {
   const { id } = req.params;
-  
+
   try {
-    // Find the event by ID to ensure it exists
     const event = await prisma.event_new.findUnique({
-      where: { id: parseInt(id, 10) },
+      where: { id },
     });
 
     if (!event) {
       return res.status(404).json({ message: 'Event not found.' });
     }
 
-    // Delete the event
     await prisma.event_new.delete({
-      where: { id: parseInt(id, 10) },
+      where: { id },
     });
 
     res.status(200).json({ message: 'Event deleted successfully.' });
@@ -206,29 +189,25 @@ const deleteEvent = async (req, res) => {
   }
 };
 
-
-
 const deleteJoinUs = async (req, res) => {
   const { id } = req.params;
-  
+
   try {
-    // Find the event by ID to ensure it exists
     const joined = await prisma.joinUs.findUnique({
-      where: { id: parseInt(id, 10) },
+      where: { id },
     });
 
     if (!joined) {
-      return res.status(404).json({ message: 'Event not found.' });
+      return res.status(404).json({ message: 'JoinUs entry not found.' });
     }
 
-    // Delete the event
     await prisma.joinUs.delete({
-      where: { id: parseInt(id, 10) },
+      where: { id },
     });
 
-    res.status(200).json({ message: 'joined deleted successfully.' });
+    res.status(200).json({ message: 'JoinUs entry deleted successfully.' });
   } catch (error) {
-    console.error('Error deleting joinus:', error);
+    console.error('Error deleting JoinUs entry:', error);
     res.status(500).json({ message: 'Internal server error.' });
   }
 };
@@ -238,7 +217,7 @@ const deleteSubscriber = async (req, res) => {
 
   try {
     const deletedSubscriber = await prisma.user.delete({
-      where: { id: parseInt(id) },
+      where: { id },
     });
 
     res.status(200).json({ message: 'Subscriber deleted successfully.', deletedSubscriber });
@@ -256,7 +235,7 @@ module.exports = {
   addBlog,
   getAllBlogs,
   getAllEvents,
-  getSubcribers,   // Ensure these are exported from the file
+  getSubscribers,
   getJoinUs,
   deleteBlog,
   deleteEvent,

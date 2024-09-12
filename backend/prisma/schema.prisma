@@ -1,35 +1,34 @@
 generator client {
   provider = "prisma-client-js"
 }
-
+e
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model user {
-  id      Int      @id @default(autoincrement())
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
   email   String   @unique
-  // Remove any reference to Image if not needed
 }
-model joinUs {
-  id      Int    @id @default(autoincrement())
-  name    String
-  email   String @unique
-  phone   String // Added phone field
 
+model joinUs {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  email   String   @unique
+  phone   String
   @@map("joinus")
 }
 
 model event_new {
-  id          Int        @id @default(autoincrement())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
   images      String
 }
 
 model blog {
-  id          Int        @id @default(autoincrement())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
   images      String
