@@ -1,37 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import EventsData from './Events/EventsData'; // Adjust the path as necessary
 
 const AllEvents = () => {
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [events, setEvents] = useState(EventsData); // Using the imported data
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Fetch all events from the API
-    const fetchEvents = async () => {
-      try {
-        const response = await axios.get('/api/users/ZXPRLQNUTKgetEvents'); // Update with your API endpoint
-        setEvents(response.data);
-      } catch (error) {
-        setError('Failed to fetch events.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
-  }, []); // Empty dependency array means this effect runs once on mount
-
-  const handleDelete = async (id) => {
+  // Delete handler for local data
+  const handleDelete = (id) => {
     try {
-      await axios.delete(`/api/users/ZXPRLQNUTKdeleteEvent/${id}`); // Update with your API endpoint for deletion
       setEvents(events.filter((event) => event.id !== id)); // Remove the deleted event from the list
     } catch (error) {
       setError('Failed to delete the event.');
     }
   };
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
@@ -42,7 +24,12 @@ const AllEvents = () => {
           <div key={event.id} style={styles.eventItem}>
             <h2 style={styles.eventTitle}>{event.title}</h2>
             <p style={styles.eventDescription}>{event.description}</p>
-            {event.images && <img src={event.images} alt={event.title} style={styles.eventImage} />}
+            {event.poster && <img src={event.poster} alt={event.title} style={styles.eventImage} />}
+            <div style={styles.imageGallery}>
+              {event.images.map((image, index) => (
+                <img key={index} src={image} alt={`${event.title} - ${index}`} style={styles.eventImage} />
+              ))}
+            </div>
             <button 
               onClick={() => handleDelete(event.id)} 
               style={styles.deleteButton}
@@ -63,36 +50,42 @@ const styles = {
   },
   header: {
     textAlign: 'center',
-    fontSize: '1.5rem', // Smaller header font size
+    fontSize: '1.5rem',
     marginBottom: '1rem',
   },
   eventList: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem', // Smaller gap between event items
+    gap: '0.5rem',
   },
   eventItem: {
     padding: '0.5rem',
     border: '1px solid #ddd',
     borderRadius: '8px',
     backgroundColor: '#fff',
-    maxWidth: '900px', // Limit the width of each event item
-    margin: '0 auto', // Center align event items
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // Subtle shadow for better visual separation
-    position: 'relative', // For positioning the delete button
+    maxWidth: '900px',
+    margin: '0 auto',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    position: 'relative',
   },
   eventTitle: {
-    fontSize: '1.2rem', // Smaller font size for the event title
+    fontSize: '1.2rem',
     marginBottom: '0.5rem',
   },
   eventDescription: {
-    fontSize: '0.9rem', // Smaller font size for the event description
+    fontSize: '0.9rem',
     marginBottom: '0.5rem',
   },
   eventImage: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '4px',
+    marginBottom: '1rem',
+  },
+  imageGallery: {
+    display: 'flex',
+    gap: '0.5rem',
+    flexWrap: 'wrap',
   },
   deleteButton: {
     position: 'absolute',
