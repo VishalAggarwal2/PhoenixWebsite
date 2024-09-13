@@ -26,7 +26,7 @@ import AllSubscribers from "../src/Components/AllSubscribers";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import axios from "axios";
 function App() {
-  axios.defaults.baseURL = 'http://localhost:3001';
+  axios.defaults.baseURL = 'https://phoenixwebsite-final.onrender.com';
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);

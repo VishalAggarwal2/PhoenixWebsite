@@ -4,15 +4,10 @@ const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
 // Middleware to parse JSON bodies
 app.use(express.json());
-const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your frontend's URL
-  methods: 'GET,POST,PUT,DELETE',  // Allowed HTTP methods
-  allowedHeaders: 'Content-Type,Authorization', // Allowed headers
-  credentials: true                // Allow credentials (cookies, etc.)
-};
+
 
 // Enable CORS with the specified options
-app.use(cors(corsOptions));
+app.use(cors());
 app.get('/',(req,res)=>{
     res.send("API is running");
 })

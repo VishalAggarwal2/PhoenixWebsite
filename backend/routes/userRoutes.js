@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, getUser, joinUs, addEvent,addBlog,getAllBlogs,getAllEvents,getSubcribers,getJoinUs,deleteBlog,deleteEvent,deleteJoinUs,deleteSubscriber } = require('../controllers/userController');
+const { createUser, getUser, joinUs, addEvent,addBlog,getAllBlogs,getAllEvents,getSubscribers,getJoinUs,deleteBlog,deleteEvent,deleteJoinUs,deleteSubscriber } = require('../controllers/userController');
 
 
 router.post('/ZXPRLQNUTKaddBlog',addBlog); 
@@ -10,7 +10,7 @@ router.post('/ZXPRLQNUTKcreate', createUser);
 
 router.get('/ZXPRLQNUTKgetBlogs',getAllBlogs)
 router.get('/ZXPRLQNUTKgetEvents',getAllEvents);
-router.get('/ZXPRLQNUTKsubscribers',getSubcribers);
+router.get('/ZXPRLQNUTKsubscribers',getSubscribers);
 router.get('/ZXPRLQNUTKgetJoinUs',getJoinUs);
 router.delete('/ZXPRLQNUTKdeleteBlog/:id', deleteBlog);
 router.delete('/ZXPRLQNUTKdeleteEvent/:id', deleteEvent);
