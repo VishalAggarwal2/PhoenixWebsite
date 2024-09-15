@@ -25,8 +25,10 @@ import AllJoinUs from "../src/Components/AllJoinUs";
 import AllSubscribers from "../src/Components/AllSubscribers";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import axios from "axios";
+import Blogmain2 from "./Components/BlogmainpageBackend";
+
 function App() {
-  axios.defaults.baseURL = 'https://phoenixwebsite-final.onrender.com';
+  axios.defaults.baseURL = 'http://localhost:3001';
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -104,7 +106,7 @@ function App() {
               path="/blogs"
               element={
                 <div onClick={DisableNav}>
-                  <Blogmain />
+                  <Blogmain2/>
                 </div>
               }
             />
