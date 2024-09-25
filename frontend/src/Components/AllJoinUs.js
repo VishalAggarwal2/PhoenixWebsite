@@ -44,6 +44,8 @@ const AllJoinUs = () => {
             <div key={entry.id} style={styles.joinUsItem}>
               <h2 style={styles.joinUsName}>{entry.name}</h2>
               <p style={styles.joinUsEmail}>{entry.email}</p>
+              <p style={styles.joinUsEmail}>{entry.phone}</p>
+
               <button 
                 style={styles.deleteButton}
                 onClick={() => handleDelete(entry.id)}

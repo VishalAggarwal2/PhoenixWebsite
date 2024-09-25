@@ -103,14 +103,42 @@
     max-width: 100%; /* Ensure full width */
   }
   .EventCard {
-    flex: 0 0 70%; /* Adjust card width for smaller screens */
+    flex: 0 0 30%; /* Adjust card width for smaller screens */
     margin: 1rem; /* Adjust margin */
+    height: auto;
+
   }
   .EventCard:hover {
-    flex: 0 0 74%; /* Increase width on hover */
-    height: auto; /* Adjust height */
-    font-size: 1.6rem;
+    transform: scale(1.2); /* Scale up on hover */
+    filter: grayscale(0%);
   }
+  
+  
+}
 
+/* Media Queries */
+@media only screen and (max-width: 400px) {
+  .EventCarousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: fit-content; /* Adjust height for content */
+    width: 100%;
+    margin: 0px;
+  }
+  .Event_data {
+    padding: 0 0rem; /* Padding adjustment for smaller screens */
+    max-width: 100%; /* Ensure full width */
+  }
+  .EventCard {
+    flex: 0 0 30%; /* Adjust card width for smaller screens */
+    margin: 1 0.2rem;
+  }
+  .EventCard:hover {
+    transform: scale(1); /* Scale up on hover */
+    filter: grayscale(0%);
+  }
+  
   
 }

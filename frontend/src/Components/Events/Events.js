@@ -1,4 +1,4 @@
-import EventCarousel from "./EventCarousel";
+import EventCarousel from "./EventCarouselBackend";
 import SingleEvent from "./SingleEvent";
 import classes from "./Styles/SingleEvent.module.css";
 
@@ -6,7 +6,7 @@ const Events = () => {
   return (
     <div className={classes.EventsPage}>
       <SingleEvent />
-      <EventCarousel />
+      <EventCarousel/>
     </div>
   );
 };
